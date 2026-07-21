@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+locale: "vi"
+
+collections:
+  - name: "blog"
+    label: "Bài viết Blog"
+    label_singular: "Bài viết"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    editor:
+      preview: false
+    summary: "{{title}}"
+    fields:
+      - { label: "Tiêu đề bài viết", name: "title", widget: "string", hint: "Tiêu đề chính, cũng là dòng chữ to nhất của bài. Nên có từ khoá SEO." }
+      - { label: "Mô tả ngắn (SEO)", name: "description", widget: "text", hint: "1-2 câu tóm tắt bài, hiện trên Google. Nên 120-160 ký tự, có từ khoá." }
+      - { label: "Ngày đăng", name: "ngayDang", widget: "datetime", date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD" }
+      - { label: "Thời gian đọc (phút)", name: "thoiGianDoc", widget: "number", required: false, default: 5, value_type: "int", min: 1, hint: "Ước lượng số phút đọc hết bài. Không bắt buộc." }
+      - { label: "Ảnh đại diện", name: "anhDaiDien", widget: "image", required: false, hint: "Ảnh hiện đầu bài (không bắt buộc). Tải ảnh thật từ máy lên." }
+      - { label: "Nội dung bài viết", name: "body", widget: "markdown", hint: "Viết nội dung ở đây. Dùng thanh công cụ để in đậm, tạo tiêu đề mục, chèn ảnh." }

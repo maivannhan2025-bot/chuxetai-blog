@@ -1,0 +1,117 @@
+---
+// Layout cho từng bài viết blog - giữ nguyên giao diện thương hiệu chuxetai.com
+const { frontmatter } = Astro.props;
+const { title, description, ngayDang, thoiGianDoc } = frontmatter;
+---
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title} — Blog chuxetai.com</title>
+<meta name="description" content={description}>
+<link rel="canonical" href={`https://chuxetai.com/blog/${Astro.url.pathname.split('/').filter(Boolean).pop()}`}>
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<meta property="og:type" content="article">
+<style>
+  :root{
+    --bg:#eef1f8; --panel:#ffffff; --card:#ffffff; --line:#e4e8f2;
+    --text:#0b1233; --text-soft:#39416b; --muted:#68708e;
+    --brand:#eb3309; --brand-dark:#b02607; --brand-tint:#fff1ec;
+    --navy:#01093b; --navy-2:#0a1550;
+    --good:#12833f; --good-tint:#e9f7ee;
+    --shadow:0 1px 2px rgba(1,9,59,.06),0 8px 30px rgba(1,9,59,.08);
+    --radius:14px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#070b1c; --panel:#0d1330; --card:#111a3c; --line:#243056;
+      --text:#eef1fb; --text-soft:#bcc4e2; --muted:#8b93b6;
+      --brand:#ff5a2b; --brand-dark:#ff7d55; --brand-tint:#2a140d;
+      --navy:#020826; --navy-2:#0a1550; --good:#4cc47e; --good-tint:#123720;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.45);
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 20px}
+  a{color:inherit}
+  .tnum{font-variant-numeric:tabular-nums}
+  .site-head{position:sticky; top:0; z-index:30; background:var(--panel); border-bottom:1px solid var(--line)}
+  .site-head .bar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0}
+  .brand-logo{display:flex; align-items:center; gap:10px; font-weight:800; font-size:19px; text-decoration:none}
+  .brand-mark{width:34px; height:34px; border-radius:9px; background:var(--brand); color:#fff; display:grid; place-items:center; font-size:19px; font-weight:800; box-shadow:0 4px 12px rgba(235,51,9,.35)}
+  .nav-links{display:flex; align-items:center; gap:22px; font-size:14.5px; font-weight:700}
+  .nav-links a{text-decoration:none; color:var(--text-soft)}
+  .nav-links a:hover{color:var(--brand-dark)}
+  .nav-links a.btn{background:var(--brand); color:#fff; padding:9px 16px; border-radius:10px}
+  .nav-links a.btn:hover{background:var(--brand-dark)}
+  @media(max-width:700px){ .nav-links a:not(.btn){display:none} }
+  .art{max-width:760px; margin:0 auto; padding:34px 0 10px}
+  .crumb{font-size:14px; font-weight:700}
+  .crumb a{color:var(--brand-dark); text-decoration:none}
+  .crumb a:hover{text-decoration:underline}
+  h1{font-size:clamp(25px,4vw,36px); line-height:1.2; font-weight:800; letter-spacing:-.015em; margin:.5em 0 .3em; text-wrap:balance}
+  .meta{color:var(--muted); font-size:13.5px; margin-bottom:22px}
+  .art h2{font-size:clamp(19px,2.8vw,24px); font-weight:800; margin:1.6em 0 .5em; letter-spacing:-.01em}
+  .art h3{font-size:clamp(17px,2.4vw,20px); font-weight:800; margin:1.3em 0 .4em}
+  .art p{margin:0 0 1em; color:var(--text-soft); font-size:16px}
+  .art strong, .art b{color:var(--text)}
+  .art ul,.art ol{color:var(--text-soft); font-size:16px; padding-left:24px; margin:0 0 1em}
+  .art li{margin-bottom:6px}
+  .art blockquote{background:var(--card); border:1px solid var(--line); border-left:4px solid var(--brand); border-radius:10px; padding:16px 18px; margin:0 0 1em; color:var(--text-soft); font-size:15px; box-shadow:var(--shadow)}
+  .art blockquote p{margin:0}
+  .art img{max-width:100%; height:auto; border-radius:12px; margin:1em 0}
+  .art a{color:var(--brand-dark); font-weight:600}
+  .cta-box{background:linear-gradient(160deg,var(--navy),var(--navy-2)); color:#fff; border-radius:18px; padding:28px 26px; text-align:center; margin:34px 0 10px}
+  .cta-box h3{margin:0 0 8px; font-size:21px; font-weight:800; color:#fff}
+  .cta-box p{margin:0 0 16px; color:#c7cde8; font-size:15px}
+  .cta-box a.go{display:inline-block; background:var(--brand); color:#fff; text-decoration:none; font-weight:800; font-size:15.5px; padding:13px 24px; border-radius:11px; box-shadow:0 8px 24px rgba(235,51,9,.35)}
+  .cta-box a.go:hover{background:var(--brand-dark)}
+  .site-foot{border-top:1px solid var(--line); background:var(--panel); margin-top:34px; padding:22px 0 32px; text-align:center; color:var(--muted); font-size:13px}
+  .site-foot b{color:var(--text-soft)}
+  .site-foot a{color:var(--text-soft)}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand-logo" href="/"><span class="brand-mark">X</span><span class="brand-name">chuxetai<span style="color:var(--brand)">.com</span></span></a>
+      <nav class="nav-links">
+        <a href="/">Trang chủ</a>
+        <a href="/blog">Blog</a>
+        <a href="/bang-gia">Bảng giá</a>
+        <a class="btn" href="https://app.chuxetai.com">Vào xem thử</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<article class="art">
+  <div class="crumb"><a href="/blog">← Blog</a></div>
+  <h1>{title}</h1>
+  <div class="meta">Blog chuxetai.com · Kinh nghiệm quản lý nhà xe{thoiGianDoc ? ` · Đọc khoảng ${thoiGianDoc} phút` : ''}</div>
+
+  <slot />
+
+  <div class="cta-box">
+    <h3>Để app trực sổ thay anh</h3>
+    <p>chuxetai.com ghi sổ tự động ngay khi chuyến chạy xong — ra lãi thật từng chuyến. Miễn phí cho 1–2 xe.</p>
+    <a class="go" href="https://app.chuxetai.com">Vào xem thử miễn phí</a>
+  </div>
+</article>
+</div>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <b>CÔNG TY TNHH VẬN TẢI VÀ CHUYỂN NHÀ HÙNG VƯƠNG</b> · MST: <span class="tnum">0316324699</span> · Tổng đài: <span class="tnum">0707.707.115</span><br>
+    © 2026 <b>chuxetai.com</b> · <a href="/">Trang chủ</a> · <a href="/blog">Blog</a> · <a href="/bang-gia">Bảng giá</a>
+  </div>
+</footer>
+
+</body>
+</html>

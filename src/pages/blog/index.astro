@@ -1,0 +1,101 @@
+---
+import { getCollection } from 'astro:content';
+
+const baiViet = (await getCollection('blog')).sort(
+  (a, b) => b.data.ngayDang.valueOf() - a.data.ngayDang.valueOf()
+);
+---
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog chuxetai.com — Kinh nghiệm quản xe, quản tiền cho nhà xe</title>
+<meta name="description" content="Kinh nghiệm quản xe, quản tiền, quản tài xế cho nhà xe Việt Nam — tính lãi lỗ, công nợ, lương tài xế, hoá đơn VAT. Cập nhật thường xuyên.">
+<style>
+  :root{
+    --bg:#eef1f8; --panel:#ffffff; --card:#ffffff; --line:#e4e8f2;
+    --text:#0b1233; --text-soft:#39416b; --muted:#68708e;
+    --brand:#eb3309; --brand-dark:#b02607; --brand-tint:#fff1ec;
+    --navy:#01093b; --navy-2:#0a1550;
+    --shadow:0 1px 2px rgba(1,9,59,.06),0 8px 30px rgba(1,9,59,.08);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#070b1c; --panel:#0d1330; --card:#111a3c; --line:#243056;
+      --text:#eef1fb; --text-soft:#bcc4e2; --muted:#8b93b6;
+      --brand:#ff5a2b; --brand-dark:#ff7d55; --brand-tint:#2a140d;
+      --navy:#020826; --navy-2:#0a1550;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.45);
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; line-height:1.7}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 20px}
+  .site-head{position:sticky; top:0; z-index:30; background:var(--panel); border-bottom:1px solid var(--line)}
+  .site-head .bar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0}
+  .brand-logo{display:flex; align-items:center; gap:10px; font-weight:800; font-size:19px; text-decoration:none; color:inherit}
+  .brand-mark{width:34px; height:34px; border-radius:9px; background:var(--brand); color:#fff; display:grid; place-items:center; font-size:19px; font-weight:800; box-shadow:0 4px 12px rgba(235,51,9,.35)}
+  .nav-links{display:flex; align-items:center; gap:22px; font-size:14.5px; font-weight:700}
+  .nav-links a{text-decoration:none; color:var(--text-soft)}
+  .nav-links a:hover{color:var(--brand-dark)}
+  .nav-links a.btn{background:var(--brand); color:#fff; padding:9px 16px; border-radius:10px}
+  @media(max-width:700px){ .nav-links a:not(.btn){display:none} }
+  .head-blog{padding:40px 0 10px; max-width:760px}
+  .head-blog h1{font-size:clamp(26px,4vw,38px); font-weight:800; letter-spacing:-.015em; margin:0 0 8px}
+  .head-blog p{color:var(--text-soft); font-size:16px; margin:0}
+  .list{max-width:760px; margin:0 auto; padding:24px 0 40px}
+  .post{display:block; text-decoration:none; color:inherit; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px 24px; margin-bottom:16px; box-shadow:var(--shadow); transition:transform .15s ease, box-shadow .15s ease}
+  .post:hover{transform:translateY(-2px); box-shadow:0 10px 30px rgba(1,9,59,.12)}
+  .post h2{font-size:20px; font-weight:800; margin:0 0 8px; letter-spacing:-.01em}
+  .post p{color:var(--text-soft); font-size:15px; margin:0 0 10px}
+  .post .go{color:var(--brand-dark); font-weight:700; font-size:14.5px}
+  .post .date{color:var(--muted); font-size:12.5px; margin-top:6px}
+  .site-foot{border-top:1px solid var(--line); background:var(--panel); margin-top:20px; padding:22px 0 32px; text-align:center; color:var(--muted); font-size:13px}
+  .site-foot b{color:var(--text-soft)}
+  .site-foot a{color:var(--text-soft)}
+  .empty{text-align:center; color:var(--muted); padding:40px 0}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand-logo" href="/"><span class="brand-mark">X</span><span>chuxetai<span style="color:var(--brand)">.com</span></span></a>
+      <nav class="nav-links">
+        <a href="/">Trang chủ</a>
+        <a href="/blog">Blog</a>
+        <a href="/bang-gia">Bảng giá</a>
+        <a class="btn" href="https://app.chuxetai.com">Vào xem thử</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="head-blog">
+    <h1>Blog chuxetai.com</h1>
+    <p>Kinh nghiệm quản xe, quản tiền, quản tài xế cho nhà xe — cập nhật thường xuyên.</p>
+  </div>
+
+  <div class="list">
+    {baiViet.length === 0 && <div class="empty">Chưa có bài viết nào.</div>}
+    {baiViet.map((bai) => (
+      <a class="post" href={`/blog/${bai.id}`}>
+        <h2>{bai.data.title}</h2>
+        <p>{bai.data.description}</p>
+        <span class="go">Đọc tiếp →</span>
+        <div class="date">{bai.data.ngayDang.toLocaleDateString('vi-VN', { day:'numeric', month:'numeric', year:'numeric' })}</div>
+      </a>
+    ))}
+  </div>
+</div>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <b>CÔNG TY TNHH VẬN TẢI VÀ CHUYỂN NHÀ HÙNG VƯƠNG</b> · MST: 0316324699 · Tổng đài: 0707.707.115<br>
+    © 2026 <b>chuxetai.com</b> · <a href="/">Trang chủ</a> · <a href="/blog">Blog</a> · <a href="/bang-gia">Bảng giá</a>
+  </div>
+</footer>
+</body>
+</html>

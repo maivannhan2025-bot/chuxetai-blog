@@ -1,0 +1,18 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaiViet from '../../layouts/BaiViet.astro';
+
+export async function getStaticPaths() {
+  const baiViet = await getCollection('blog');
+  return baiViet.map((bai) => ({
+    params: { slug: bai.id },
+    props: { bai },
+  }));
+}
+
+const { bai } = Astro.props;
+const { Content } = await render(bai);
+---
+<BaiViet frontmatter={bai.data}>
+  <Content />
+</BaiViet>
