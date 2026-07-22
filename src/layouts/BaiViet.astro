@@ -14,7 +14,7 @@ const { title, description, ngayDang, thoiGianDoc } = frontmatter;
 <meta property="og:title" content={title}>
 <meta property="og:description" content={description}>
 <meta property="og:type" content="article">
-<style>
+<style is:global>
   :root{
     --bg:#eef1f8; --panel:#ffffff; --card:#ffffff; --line:#e4e8f2;
     --text:#0b1233; --text-soft:#39416b; --muted:#68708e;
@@ -63,6 +63,13 @@ const { title, description, ngayDang, thoiGianDoc } = frontmatter;
   .art blockquote{background:var(--card); border:1px solid var(--line); border-left:4px solid var(--brand); border-radius:10px; padding:16px 18px; margin:0 0 1em; color:var(--text-soft); font-size:15px; box-shadow:var(--shadow)}
   .art blockquote p{margin:0}
   .art img{max-width:100%; height:auto; border-radius:12px; margin:1em 0}
+  .art table{border-collapse:collapse; width:100%; margin:0 0 1em; background:var(--card); border:1px solid var(--line); border-radius:10px; overflow:hidden; font-size:14.5px}
+  .art th,.art td{padding:10px 12px; border-bottom:1px solid var(--line); text-align:left; color:var(--text-soft)}
+  .art th{color:var(--text); font-weight:800; font-size:13.5px}
+  .art td.r,.art th.r{text-align:right}
+  .art figure{margin:0 0 1.3em}
+  .art figure img{width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--line); box-shadow:var(--shadow); margin:0}
+  .art figcaption{color:var(--muted); font-size:13px; text-align:center; margin-top:8px}
   .art a{color:var(--brand-dark); font-weight:600}
   .cta-box{background:linear-gradient(160deg,var(--navy),var(--navy-2)); color:#fff; border-radius:18px; padding:28px 26px; text-align:center; margin:34px 0 10px}
   .cta-box h3{margin:0 0 8px; font-size:21px; font-weight:800; color:#fff}

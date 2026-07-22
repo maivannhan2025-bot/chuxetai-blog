@@ -1,0 +1,60 @@
+# Cấu hình Pages CMS cho blog chuxetai — https://pagescms.org
+# Người viết đăng nhập bằng email (không cần GitHub) qua app.pagescms.org
+
+# Ảnh: upload vào public/anh, trong bài ghi đường dẫn /anh/...
+media:
+  input: public/anh
+  output: /anh
+  categories: [image]
+
+content:
+  - name: blog
+    label: Bài viết Blog
+    type: collection
+    path: src/content/blog
+    format: yaml-frontmatter
+    filename: '{primary}.md'
+    view:
+      primary: title
+      sort: [ngayDang]
+      default:
+        sort: ngayDang
+        order: desc
+    fields:
+      - name: title
+        label: Tiêu đề bài viết
+        type: string
+        required: true
+        description: Tiêu đề chính, cũng là dòng chữ to nhất của bài. Nên có từ khoá SEO.
+
+      - name: description
+        label: Mô tả ngắn (SEO)
+        type: text
+        required: true
+        description: 1-2 câu tóm tắt bài, hiện trên Google. Nên 120-160 ký tự, có từ khoá.
+
+      - name: ngayDang
+        label: Ngày đăng
+        type: date
+        required: true
+        options:
+          time: false
+          format: yyyy-MM-dd
+
+      - name: thoiGianDoc
+        label: Thời gian đọc (phút)
+        type: number
+        required: false
+        description: Ước lượng số phút đọc hết bài. Không bắt buộc.
+
+      - name: anhDaiDien
+        label: Ảnh đại diện
+        type: image
+        required: false
+        description: Ảnh hiện đầu bài (không bắt buộc). Tải ảnh thật từ máy lên.
+
+      - name: body
+        label: Nội dung bài viết
+        type: rich-text
+        options:
+          format: markdown

@@ -10,15 +10,17 @@ const baiViet = (await getCollection('blog')).sort(
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blog chuxetai.com — Kinh nghiệm quản xe, quản tiền cho nhà xe</title>
-<meta name="description" content="Kinh nghiệm quản xe, quản tiền, quản tài xế cho nhà xe Việt Nam — tính lãi lỗ, công nợ, lương tài xế, hoá đơn VAT. Cập nhật thường xuyên.">
-<style>
+<title>Blog chuxetai.com — Kinh nghiệm quản xe, quản tiền, quản tài xế cho nhà xe</title>
+<meta name="description" content="Kinh nghiệm quản lý nhà xe: tính lãi lỗ chuyến xe, đòi công nợ khéo, lương tài xế, công nợ đối tác 2 chiều, hoá đơn VAT — viết bằng lời thường.">
+<link rel="canonical" href="https://chuxetai.com/blog">
+<style is:global>
   :root{
     --bg:#eef1f8; --panel:#ffffff; --card:#ffffff; --line:#e4e8f2;
     --text:#0b1233; --text-soft:#39416b; --muted:#68708e;
     --brand:#eb3309; --brand-dark:#b02607; --brand-tint:#fff1ec;
     --navy:#01093b; --navy-2:#0a1550;
     --shadow:0 1px 2px rgba(1,9,59,.06),0 8px 30px rgba(1,9,59,.08);
+    --radius:14px;
   }
   @media (prefers-color-scheme:dark){
     :root{
@@ -30,38 +32,51 @@ const baiViet = (await getCollection('blog')).sort(
     }
   }
   *{box-sizing:border-box}
-  body{margin:0; background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; line-height:1.7}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased}
   .wrap{max-width:1120px; margin:0 auto; padding:0 20px}
+  a{color:inherit}
+  .tnum{font-variant-numeric:tabular-nums}
   .site-head{position:sticky; top:0; z-index:30; background:var(--panel); border-bottom:1px solid var(--line)}
   .site-head .bar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0}
-  .brand-logo{display:flex; align-items:center; gap:10px; font-weight:800; font-size:19px; text-decoration:none; color:inherit}
+  .brand-logo{display:flex; align-items:center; gap:10px; font-weight:800; font-size:19px; text-decoration:none}
   .brand-mark{width:34px; height:34px; border-radius:9px; background:var(--brand); color:#fff; display:grid; place-items:center; font-size:19px; font-weight:800; box-shadow:0 4px 12px rgba(235,51,9,.35)}
   .nav-links{display:flex; align-items:center; gap:22px; font-size:14.5px; font-weight:700}
   .nav-links a{text-decoration:none; color:var(--text-soft)}
   .nav-links a:hover{color:var(--brand-dark)}
   .nav-links a.btn{background:var(--brand); color:#fff; padding:9px 16px; border-radius:10px}
+  .nav-links a.btn:hover{background:var(--brand-dark)}
   @media(max-width:700px){ .nav-links a:not(.btn){display:none} }
-  .head-blog{padding:40px 0 10px; max-width:760px}
-  .head-blog h1{font-size:clamp(26px,4vw,38px); font-weight:800; letter-spacing:-.015em; margin:0 0 8px}
-  .head-blog p{color:var(--text-soft); font-size:16px; margin:0}
-  .list{max-width:760px; margin:0 auto; padding:24px 0 40px}
-  .post{display:block; text-decoration:none; color:inherit; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px 24px; margin-bottom:16px; box-shadow:var(--shadow); transition:transform .15s ease, box-shadow .15s ease}
-  .post:hover{transform:translateY(-2px); box-shadow:0 10px 30px rgba(1,9,59,.12)}
-  .post h2{font-size:20px; font-weight:800; margin:0 0 8px; letter-spacing:-.01em}
-  .post p{color:var(--text-soft); font-size:15px; margin:0 0 10px}
-  .post .go{color:var(--brand-dark); font-weight:700; font-size:14.5px}
-  .post .date{color:var(--muted); font-size:12.5px; margin-top:6px}
-  .site-foot{border-top:1px solid var(--line); background:var(--panel); margin-top:20px; padding:22px 0 32px; text-align:center; color:var(--muted); font-size:13px}
+  .head-sec{max-width:680px; margin:0 auto; text-align:center; padding:40px 0 8px}
+  .head-sec h1{font-size:clamp(26px,4vw,38px); font-weight:800; letter-spacing:-.015em; margin:0 0 10px; text-wrap:balance}
+  .head-sec p{margin:0; color:var(--muted); font-size:16px}
+  section{padding:30px 0 44px}
+  .blog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  @media(max-width:960px){ .blog-grid{grid-template-columns:repeat(2,1fr)} }
+  @media(max-width:600px){ .blog-grid{grid-template-columns:1fr} }
+  .bcard{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow); display:flex; flex-direction:column}
+  .bcard h3{margin:0 0 8px; font-size:16px; font-weight:800; line-height:1.35}
+  .bcard h3 a{text-decoration:none}
+  .bcard h3 a:hover{color:var(--brand-dark)}
+  .bcard p{margin:0 0 14px; color:var(--text-soft); font-size:13.8px; flex:1}
+  .bcard .more{color:var(--brand-dark); font-weight:800; font-size:14px; text-decoration:none}
+  .bcard .more:hover{text-decoration:underline}
+  .cta-box{background:linear-gradient(160deg,var(--navy),var(--navy-2)); color:#fff; border-radius:18px; padding:30px 26px; text-align:center; margin:10px 0 40px}
+  .cta-box h3{margin:0 0 8px; font-size:21px; font-weight:800}
+  .cta-box p{margin:0 0 16px; color:#c7cde8; font-size:15px}
+  .cta-box a.go{display:inline-block; background:var(--brand); color:#fff; text-decoration:none; font-weight:800; font-size:15.5px; padding:13px 24px; border-radius:11px; box-shadow:0 8px 24px rgba(235,51,9,.35)}
+  .cta-box a.go:hover{background:var(--brand-dark)}
+  .site-foot{border-top:1px solid var(--line); background:var(--panel); padding:22px 0 32px; text-align:center; color:var(--muted); font-size:13px}
   .site-foot b{color:var(--text-soft)}
   .site-foot a{color:var(--text-soft)}
   .empty{text-align:center; color:var(--muted); padding:40px 0}
 </style>
 </head>
 <body>
+
 <header class="site-head">
   <div class="wrap">
     <div class="bar">
-      <a class="brand-logo" href="/"><span class="brand-mark">X</span><span>chuxetai<span style="color:var(--brand)">.com</span></span></a>
+      <a class="brand-logo" href="/"><span class="brand-mark">X</span><span class="brand-name">chuxetai<span style="color:var(--brand)">.com</span></span></a>
       <nav class="nav-links">
         <a href="/">Trang chủ</a>
         <a href="/blog">Blog</a>
@@ -73,27 +88,34 @@ const baiViet = (await getCollection('blog')).sort(
 </header>
 
 <div class="wrap">
-  <div class="head-blog">
+  <div class="head-sec">
     <h1>Blog chuxetai.com</h1>
-    <p>Kinh nghiệm quản xe, quản tiền, quản tài xế cho nhà xe — cập nhật thường xuyên.</p>
+    <p>Kinh nghiệm quản xe, quản tiền, quản tài xế cho nhà xe Việt Nam — viết bằng lời thường, đọc xong áp dụng được ngay.</p>
   </div>
 
-  <div class="list">
+  <section>
     {baiViet.length === 0 && <div class="empty">Chưa có bài viết nào.</div>}
-    {baiViet.map((bai) => (
-      <a class="post" href={`/blog/${bai.id}`}>
-        <h2>{bai.data.title}</h2>
-        <p>{bai.data.description}</p>
-        <span class="go">Đọc tiếp →</span>
-        <div class="date">{bai.data.ngayDang.toLocaleDateString('vi-VN', { day:'numeric', month:'numeric', year:'numeric' })}</div>
-      </a>
-    ))}
+    <div class="blog-grid">
+      {baiViet.map((bai) => (
+        <div class="bcard">
+          <h3><a href={`/blog/${bai.id}`}>{bai.data.title}</a></h3>
+          <p>{bai.data.description}</p>
+          <a class="more" href={`/blog/${bai.id}`}>Đọc tiếp →</a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <div class="cta-box">
+    <h3>Đọc xong thấy đúng chuyện của mình?</h3>
+    <p>Mọi bài trên blog này đều là những việc chuxetai.com làm tự động. Vào xem thử với dữ liệu mẫu, không cần đăng ký.</p>
+    <a class="go" href="https://app.chuxetai.com">Vào xem thử miễn phí</a>
   </div>
 </div>
 
 <footer class="site-foot">
   <div class="wrap">
-    <b>CÔNG TY TNHH VẬN TẢI VÀ CHUYỂN NHÀ HÙNG VƯƠNG</b> · MST: 0316324699 · Tổng đài: 0707.707.115<br>
+    <b>CÔNG TY TNHH VẬN TẢI VÀ CHUYỂN NHÀ HÙNG VƯƠNG</b> · MST: <span class="tnum">0316324699</span> · Tổng đài: <span class="tnum">0707.707.115</span><br>
     © 2026 <b>chuxetai.com</b> · <a href="/">Trang chủ</a> · <a href="/blog">Blog</a> · <a href="/bang-gia">Bảng giá</a>
   </div>
 </footer>
