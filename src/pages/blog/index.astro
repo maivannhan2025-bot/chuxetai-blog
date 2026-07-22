@@ -45,7 +45,13 @@ const baiViet = (await getCollection('blog')).sort(
   .nav-links a:hover{color:var(--brand-dark)}
   .nav-links a.btn{background:var(--brand); color:#fff; padding:9px 16px; border-radius:10px}
   .nav-links a.btn:hover{background:var(--brand-dark)}
-  @media(max-width:700px){ .nav-links a:not(.btn){display:none} }
+  @media(max-width:700px){
+    .nav-links a:not(.btn){display:none}
+    .nav-links a.btn{padding:7px 12px; font-size:12.5px; border-radius:9px}
+    .brand-logo{font-size:16px; gap:8px}
+    .brand-mark{width:29px; height:29px; font-size:16px; border-radius:8px}
+    .site-head .bar{padding:9px 0}
+  }
   .head-sec{max-width:680px; margin:0 auto; text-align:center; padding:40px 0 8px}
   .head-sec h1{font-size:clamp(26px,4vw,38px); font-weight:800; letter-spacing:-.015em; margin:0 0 10px; text-wrap:balance}
   .head-sec p{margin:0; color:var(--muted); font-size:16px}
