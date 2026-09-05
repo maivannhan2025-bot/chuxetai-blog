@@ -6,6 +6,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch: {}
+  # Bai dat lich (ngayDang tuong lai) chi hien ra o lan build SAU dung ngay do
+  # -> dung lai deu dan, khong thi bai dat lich nam mai trong kho khong bao gio len web.
+  schedule:
+    - cron: '0 */2 * * *'
 
 jobs:
   deploy:
@@ -21,6 +25,10 @@ jobs:
 
       - run: npm run build
 
+      # Chup lai sitemap DANG live TRUOC khi deploy, de lat nua biet bai nao vua moi len.
+      - name: Ghi nhớ sitemap đang live (để biết bài nào mới)
+        run: node .github/bao-index.mjs ghi-nho
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
@@ -28,24 +36,8 @@ jobs:
           accountId: e9e88ac586803b53ffff66350dd0e375
           command: pages deploy dist --project-name=chuxetai-blog --branch=main
 
-      # Báo cho Bing/Yandex... biết web vừa có bài mới, để họ mò lại sớm hơn
-      # (IndexNow — không phục vụ Google, Google đi theo sitemap + Search Console).
-      # Khoá này vốn phải công khai qua file .txt nên để thẳng đây, không phải bí mật.
-      # LƯU Ý: chuxetai.com (gốc) là project MARKETING, chỉ /blog/* mới vào project này
-      # → file khoá đặt ở /blog/ và IndexNow chỉ cho báo URL nằm trong /blog/.
-      - name: Báo IndexNow (Bing/Yandex)
-        run: |
-          node -e "
-            const fs = require('fs');
-            const KEY = 'e9e6ba4dd32c595ce7dc0497b939d383d5af6e97';
-            const HOST = 'chuxetai.com';
-            const xml = fs.readFileSync('dist/blog/sitemap.xml', 'utf8');
-            const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1])
-                          .filter(u => u.startsWith('https://' + HOST + '/blog/'));
-            fetch('https://api.indexnow.org/indexnow', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json; charset=utf-8' },
-              body: JSON.stringify({ host: HOST, key: KEY, keyLocation: 'https://' + HOST + '/blog/' + KEY + '.txt', urlList: urls }),
-            }).then(r => console.log('IndexNow trả về status:', r.status, '- số URL đã gửi:', urls.length))
-              .catch(e => console.log('IndexNow lỗi (bỏ qua, không chặn deploy):', e.message));
-          "
+      # Bao cho Bing/Yandex/Naver/Seznam biet BAI VUA LEN CONG KHAI (IndexNow).
+      # Chi bao URL moi hoac doi ngay — khong bao lai ca sitemap. Google KHONG dung
+      # IndexNow: Google di theo sitemap + Search Console.
+      - name: Báo index bài vừa lên công khai
+        run: node .github/bao-index.mjs bao
