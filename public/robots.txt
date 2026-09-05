@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Khong cho Google lap chi muc trang quan ly / cong cu noi bo
+Disallow: /quan-ly
+Disallow: /admin
+
+Sitemap: https://chuxetai.com/sitemap.xml
