@@ -27,3 +27,25 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: e9e88ac586803b53ffff66350dd0e375
           command: pages deploy dist --project-name=chuxetai-blog --branch=main
+
+      # Báo cho Bing/Yandex... biết web vừa có bài mới, để họ mò lại sớm hơn
+      # (IndexNow — không phục vụ Google, Google đi theo sitemap + Search Console).
+      # Khoá này vốn phải công khai qua file .txt nên để thẳng đây, không phải bí mật.
+      # LƯU Ý: chuxetai.com (gốc) là project MARKETING, chỉ /blog/* mới vào project này
+      # → file khoá đặt ở /blog/ và IndexNow chỉ cho báo URL nằm trong /blog/.
+      - name: Báo IndexNow (Bing/Yandex)
+        run: |
+          node -e "
+            const fs = require('fs');
+            const KEY = 'e9e6ba4dd32c595ce7dc0497b939d383d5af6e97';
+            const HOST = 'chuxetai.com';
+            const xml = fs.readFileSync('dist/blog/sitemap.xml', 'utf8');
+            const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1])
+                          .filter(u => u.startsWith('https://' + HOST + '/blog/'));
+            fetch('https://api.indexnow.org/indexnow', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json; charset=utf-8' },
+              body: JSON.stringify({ host: HOST, key: KEY, keyLocation: 'https://' + HOST + '/blog/' + KEY + '.txt', urlList: urls }),
+            }).then(r => console.log('IndexNow trả về status:', r.status, '- số URL đã gửi:', urls.length))
+              .catch(e => console.log('IndexNow lỗi (bỏ qua, không chặn deploy):', e.message));
+          "
