@@ -37,3 +37,9 @@ Ba khoản này phá nát sổ lương nếu ghi tùy hứng:
 Cãi nhau lương thường không phải vì con số sai, mà vì **tài xế không nhìn thấy con số được tính thế nào**. Cách chữa đơn giản: cho tài xế xem được tiền công của chính mình **theo từng chuyến, ngay khi chuyến xong** — chuyến này bao nhiêu, tăng ca bao nhiêu, đã ứng bao nhiêu. Cuối tháng con số cuối cùng không còn là bất ngờ, chỉ là phép cộng mà cả hai bên đã nhìn thấy từng dòng suốt tháng.
 
 Làm bằng tay thì đây là việc tốn công nhất: mỗi tài xế một bảng, mỗi chuyến một dòng, cộng đi cộng lại. Phần mềm làm việc này tự động: chuyến hoàn thành là tiền công tài xế tự nhảy vào bảng lương — theo chuyến hay theo % đều được — tài xế mở điện thoại thấy tiền công của mình từng chuyến, chủ cuối tháng bấm một nút ra bảng lương cả đội.
+
+## Bài viết liên quan
+
+- [Tính lãi lỗ một chuyến xe cho đúng: dầu, phí đường, lương, khấu hao](/blog/tinh-lai-lo-chuyen-xe/)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

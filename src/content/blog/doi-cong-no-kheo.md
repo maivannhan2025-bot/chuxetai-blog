@@ -35,3 +35,11 @@ Bảng kê chỉ mạnh khi con số trong đó **không cãi được**. Muốn
 ## Đều tay mới là khó nhất
 
 Mọi thứ ở trên đều đơn giản — cái khó là làm **đều đặn hằng tháng** khi anh còn trăm việc khác. Đây là chỗ phần mềm giúp được: mỗi chuyến hoàn thành tự vào sổ, cuối tháng bảng kê từng khách tự gộp sẵn — ngày, tuyến, cước, phát sinh, tổng — xuất PDF một chạm rồi gửi Zalo. Ai đang nợ, nợ từ chuyến nào, mở app thấy liền, không phải lật sổ.
+
+## Bài viết liên quan
+
+- [Mẫu bảng kê công nợ vận tải: cột nào cần, gửi khách sao cho đòi được tiền](/blog/mau-bang-ke-cong-no-van-tai/)
+- [Chạy cho đối tác, môi giới: tách công nợ 2 chiều khỏi lẫn lộn](/blog/cong-no-2-chieu-doi-tac/)
+- [Phần mềm quản lý nhà xe: chọn sao cho đúng, khỏi tiền mất tật mang](/blog/phan-mem-quan-ly-nha-xe/)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

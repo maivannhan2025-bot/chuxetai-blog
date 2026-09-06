@@ -46,3 +46,10 @@ Cách đơn giản nhất: cộng hết chi phí cố định của một chiế
 ## Ghi tay được không? Được — nhưng phải đều tay
 
 Tất cả những phép tính trên đều làm được bằng sổ tay hoặc Excel, với một điều kiện: **ghi đủ và ghi ngay**, chuyến nào xong ghi chuyến đó. Thực tế thì cuối ngày ai cũng mệt, ghi dồn ba bốn chuyến, sót một khoản phí là con số lệch. Đó là lý do phần mềm sinh ra: anh chỉ nhập cước và chi phí phát sinh, còn dầu theo giá ngày, lương tài xế, chi phí cố định phân bổ — máy tự trừ, tự ra lãi thật **ngay khi chuyến hoàn thành**.
+
+## Bài viết liên quan
+
+- [5 sai lầm ghi sổ khiến nhà xe tưởng lời mà thực ra lỗ](/blog/5-sai-lam-ghi-so/)
+- [Trả lương tài xế theo chuyến hay theo phần trăm cước?](/blog/luong-tai-xe-chuyen-hay-phan-tram/)
+
+*Quy định nhắc trong bài tra tại [Cục Đăng kiểm Việt Nam](https://www.vr.org.vn).*

@@ -63,3 +63,9 @@ Và luôn nhớ: **dùng thử trước khi trả tiền.** Cho tài xế nhập
 ## Ghi tay được không? Được — nhưng phải đều tay
 
 Tất cả những việc trên đều làm được bằng sổ hoặc Excel, với một điều kiện: **ghi đủ và ghi ngay**. Thực tế cuối ngày ai cũng mệt, ghi dồn ba bốn chuyến, sót một khoản phí là con số lệch, tới tháng nhìn lại không hiểu tiền đi đâu. Đó chính là lý do phần mềm sinh ra. Với **chuxetai.com**, anh chỉ nhập cước và chi phí phát sinh; còn dầu theo giá ngày, lương tài xế, khấu hao phân bổ, công nợ hai chiều — máy tự trừ, tự chốt, hiện lãi thật **ngay khi chuyến hoàn thành**. Cả chủ, kế toán và tài xế mỗi người xem đúng phần của mình, ngay trên điện thoại.
+
+## Bài viết liên quan
+
+- [Công nợ nhà xe: đòi tiền khách sao cho khéo mà vẫn chắc](/blog/doi-cong-no-kheo/)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

@@ -40,3 +40,10 @@ Làm với đối tác công ty thì có chuyến xuất hoá đơn, có chuyế
 ## Việc này đúng ra máy phải làm
 
 Tách hai sổ, chốt chênh lệch từng chuyến, cộng VAT đúng chuyến, cấn trừ cuối tháng — toàn việc máy làm giỏi hơn người. Trong chuxetai.com, mỗi đối tác có sẵn hai bảng công nợ hai chiều, chuyến sang tay tự tính chênh lệch môi giới, VAT bám theo từng số hoá đơn, cuối tháng xuất bảng kê PDF gửi Zalo cho đối tác đối chiếu. Anh chỉ còn mỗi việc nhìn con số cuối: bên nào chuyển bên nào bao nhiêu.
+
+## Bài viết liên quan
+
+- [Công nợ nhà xe: đòi tiền khách sao cho khéo mà vẫn chắc](/blog/doi-cong-no-kheo/)
+- [Mẫu bảng kê công nợ vận tải: cột nào cần, gửi khách sao cho đòi được tiền](/blog/mau-bang-ke-cong-no-van-tai/)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

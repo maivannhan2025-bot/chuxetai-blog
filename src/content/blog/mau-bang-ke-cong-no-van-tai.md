@@ -51,3 +51,11 @@ Nguyên tắc vàng: **gửi theo lịch, không theo cảm xúc.** Cứ đầu 
 ## Làm tay được — nhưng đến chục khách thì đuối
 
 Một hai khách thì Excel thừa sức. Nhưng khi có hàng chục khách, mỗi tháng mấy chục chuyến, việc **cập nhật từng lần thu, cộng lại, tách VAT, mang nợ đầu kỳ sang tháng mới** cho từng khách rất dễ sai và ngốn thời gian. Đó là lúc phần mềm giúp: với **chuxetai.com**, anh chỉ nhập chuyến và mỗi lần khách trả; phần mềm **tự dựng bảng kê công nợ từng khách theo tháng**, tự cộng, tự mang nợ sang kỳ sau, và cho anh **gửi thẳng qua Zalo** chỉ bằng một nút — đúng như tờ mẫu ở đầu bài.
+
+## Bài viết liên quan
+
+- [Công nợ nhà xe: đòi tiền khách sao cho khéo mà vẫn chắc](/blog/doi-cong-no-kheo/)
+- [Chạy cho đối tác, môi giới: tách công nợ 2 chiều khỏi lẫn lộn](/blog/cong-no-2-chieu-doi-tac/)
+- [Hoá đơn VAT 8% trong vận tải: khi nào xuất, ghi sổ thế nào](/blog/hoa-don-vat-8-phan-tram/)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

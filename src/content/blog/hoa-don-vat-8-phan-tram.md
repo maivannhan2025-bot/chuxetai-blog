@@ -38,3 +38,10 @@ Khách công ty thường yêu cầu hoá đơn trong tháng phát sinh chuyến
 ## Để app nhớ thay
 
 Trong chuxetai.com, mỗi chuyến có ô số hoá đơn riêng (kể cả số hoá đơn đối tác tách riêng), VAT 8% tự cộng đúng vào những chuyến đã xuất theo từng số hoá đơn, bảng kê tháng tự tách cột cước — thuế — tổng, và app nhắc những chuyến khách cần hoá đơn mà chưa có số. Anh không phải nhớ, chỉ phải bấm xuất.
+
+## Bài viết liên quan
+
+- [Mẫu bảng kê công nợ vận tải: cột nào cần, gửi khách sao cho đòi được tiền](/blog/mau-bang-ke-cong-no-van-tai/)
+- [5 sai lầm ghi sổ khiến nhà xe tưởng lời mà thực ra lỗ](/blog/5-sai-lam-ghi-so/)
+
+*Quy định nhắc trong bài tra tại [Tổng cục Thuế](https://www.gdt.gov.vn).*

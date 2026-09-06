@@ -40,3 +40,11 @@ Chạy xong không xác nhận lại cước và phát sinh với khách, để 
 ## Sợi chỉ đỏ xuyên suốt cả 5 lỗi
 
 Cả 5 sai lầm có chung một gốc: **việc ghi chép dựa vào trí nhớ và sự siêng năng của một con người** — mà người thì có ngày mệt, ngày bận, ngày quên. Cách vá bền nhất là để hệ thống ghi thay: chuyến hoàn thành tự vào sổ, chi phí tài xế báo qua điện thoại có ảnh chứng từ, dầu bám giá từng ngày, chi phí cố định tự phân bổ, công nợ tự cộng từng khách. Người chỉ làm việc người giỏi nhất: quyết định. Máy làm việc máy giỏi nhất: nhớ và cộng.
+
+## Bài viết liên quan
+
+- [Công nợ nhà xe: đòi tiền khách sao cho khéo mà vẫn chắc](/blog/doi-cong-no-kheo/)
+- [Hoá đơn VAT 8% trong vận tải: khi nào xuất, ghi sổ thế nào](/blog/hoa-don-vat-8-phan-tram/)
+- [Tính lãi lỗ một chuyến xe cho đúng: dầu, phí đường, lương, khấu hao](/blog/tinh-lai-lo-chuyen-xe/)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*
