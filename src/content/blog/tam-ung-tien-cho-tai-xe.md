@@ -4,7 +4,7 @@ description: "Tạm ứng tiền cho tài xế xe tải: cách ghi từng khoả
 ngayDang: 2026-09-30
 thoiGianDoc: 12
 anhDaiDien: "/anh/tam-ung-tien-cho-tai-xe-truoc-chuyen.jpg"
-tuKhoa: "tạm ứng tiền cho tài xế"
+tuKhoa: "tạm ứng tiền cho tài xế, ứng tiền tài xế, ghi sổ tạm ứng"
 ---
 
 Sáng xe chuẩn bị lăn bánh, tài xế gọi: "Anh ơi chuyển em hai triệu đổ dầu." Chiều lại một cuộc: "Trạm này thu luật, em ứng thêm năm trăm." Cuối tháng ngồi tính lương, anh lật sổ thì chỉ thấy một dòng, còn tài xế nhớ ba dòng. Chuyện tạm ứng tiền cho tài xế nhà xe nào cũng gặp, và gần như nhà xe nào cũng từng lệch sổ vì nó. Lệch vài trăm thì bỏ qua cho êm. Lệch vài triệu thì mất lòng, có khi mất luôn người lái giỏi.
@@ -107,7 +107,7 @@ Ba cách, chọn một:
 
 - **Ký tay vào sổ** lúc xe về bãi.
 - **Nhắn xác nhận qua Zalo.** Chủ gửi ảnh dòng quyết toán, tài xế trả lời "ok". Tin nhắn đó là bằng chứng.
-- **Xác nhận trên app** nếu anh dùng phần mềm có tài khoản cho tài xế.
+- **Xác nhận trên phần mềm** nếu anh dùng phần mềm có tài khoản cho tài xế.
 
 Bộ luật Lao động 2019 cũng yêu cầu mỗi lần trả lương phải thông báo bảng kê trả lương, ghi rõ nội dung và số tiền bị khấu trừ nếu có. Tài xế nhìn thấy dòng "đã ứng 3 triệu ngày 15" trên bảng kê thì không còn gì để cãi.
 
@@ -143,17 +143,17 @@ Ghi đúng tên khoản, số tiền, nơi chi, và để tài xế nhắn một
 
 Hai ba xe thì sổ tay vẫn ổn. Từ năm xe trở lên, mỗi ngày vài chục lần tạm ứng tiền cho tài xế, ảnh hoá đơn nằm rải rác trong mười nhóm Zalo, kế toán bắt đầu trừ nhầm. Đây là lúc nên nghĩ tới phần mềm.
 
-App quản xe chuxetai do một chủ xe tải làm ra, cho chủ xe tải dùng. Theo những gì trang giới thiệu đang ghi:
+Phần mềm quản xe chuxetai do một chủ xe tải làm ra, cho chủ xe tải dùng. Theo những gì trang giới thiệu đang ghi:
 
-- Tài xế nhận lệnh trên điện thoại và **chụp chứng từ ngay trong app**, chi phí tài xế báo có kèm ảnh.
-- **Lương tài xế tự tính** theo chuyến hoặc phần trăm cước, cộng tăng ca, **trừ tạm ứng**. Tài xế mở app thấy tiền công từng chuyến của mình.
-- Chuyến chạy xong là biết lời hay lỗ, công nợ khách tự cộng, đăng kiểm sắp hết hạn app nhắc trước.
+- Tài xế nhận lệnh trên điện thoại và **chụp chứng từ ngay trong phần mềm**, chi phí tài xế báo có kèm ảnh.
+- **Lương tài xế tự tính** theo chuyến hoặc phần trăm cước, cộng tăng ca, **trừ tạm ứng**. Tài xế mở phần mềm thấy tiền công từng chuyến của mình.
+- Chuyến chạy xong là biết lời hay lỗ, công nợ khách tự cộng, đăng kiểm sắp hết hạn phần mềm nhắc trước.
 - Sổ sách tự sao lưu vào Google Sheet của anh.
 
-Giá ghi trên trang là **50.000đ/tháng cho cả đội xe**, 1 xe hay gần 100 xe cùng một giá. Dùng thử 30 ngày, không nhập thẻ ngân hàng, không tự trừ tiền. Muốn xem trước thì mở [app quản xe chuxetai](/quan-ly-xe-tai/) là có một đội xe mẫu để bấm thử, chưa cần đăng ký.
+Giá ghi trên trang là **68.000 đ/tháng** gói Cá Nhân và **186.000 đ/tháng** gói Doanh Nghiệp. Dùng thử 30 ngày, không nhập thẻ ngân hàng, không tự trừ tiền. Muốn xem trước thì mở [phần mềm quản xe chuxetai](/quan-ly-xe-tai/) là có một đội xe mẫu để bấm thử, chưa cần đăng ký.
 
 Phần mềm không thay được thói quen ghi ngay. Nó chỉ làm cho việc ghi ngay dễ hơn.
 
 Chưa muốn dùng gì cũng không sao. Chuyến tới, anh tách hai cột: tiền ứng cho chuyến và tiền ứng lương. Quyết toán ngay khi xe về. Tài xế xác nhận từng lần.
 
-Muốn máy làm phần cộng trừ, anh thử app quản xe chuxetai 30 ngày, hoặc [gửi câu hỏi cho bên mình](/lien-he?sp=cong-no) nếu cần hỏi thêm trước khi dùng. Nếu thấy bài có ích, gửi cho một ông chủ xe quen đang đau đầu vì sổ ứng. Chắc chắn có người đang cần.
+Muốn máy làm phần cộng trừ, anh dùng thử phần mềm quản lý công nợ chuxetai 30 ngày tại [chuxetai.com/quan-ly-xe](/quan-ly-xe), hoặc [gửi câu hỏi cho bên mình](/lien-he?sp=cong-no) nếu cần hỏi thêm trước khi dùng. Nếu thấy bài có ích, gửi cho một ông chủ xe quen đang đau đầu vì sổ ứng. Chắc chắn có người đang cần.
