@@ -1,0 +1,23 @@
+name: Trang chu chuxetai.com
+
+# Trang chu chuxetai.com (Pages project chuxetai-web) nam o thu muc trang-chu/.
+# Trang quan tri tong (quantri.chuxetai.com) sua trang-chu/index.html qua nut "Duyet dang" -> day len main -> tu dang.
+# Chay tay (workflow_dispatch) voi nhanh khac main = ban xem thu, KHONG dung trang that.
+on:
+  workflow_dispatch:
+    inputs:
+      nhanh:
+        description: "main = len trang that; ten khac = ban xem thu"
+        default: "thu"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Dang len Cloudflare Pages (chuxetai-web)
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: e9e88ac586803b53ffff66350dd0e375
+          command: pages deploy trang-chu --project-name=chuxetai-web --branch=${{ github.event.inputs.nhanh || 'main' }} --commit-dirty=true

@@ -5,6 +5,7 @@ name: Build & Deploy blog
 on:
   push:
     branches: [main]
+    paths-ignore: ['trang-chu/**', '.github/workflows/trang-chu.yml']   # sua trang chu khong can build lai blog
   workflow_dispatch: {}
   # Bai dat lich (ngayDang tuong lai) chi hien ra o lan build SAU dung ngay do
   # -> dung lai deu dan, khong thi bai dat lich nam mai trong kho khong bao gio len web.

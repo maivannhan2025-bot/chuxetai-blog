@@ -1,0 +1,17 @@
+{
+  "name": "chuxetai — Quản lý vận tải",
+  "short_name": "chuxetai",
+  "description": "Ghi công nợ, lãi lỗ từng chuyến, tự nhắc nợ, nhắc đăng kiểm – bảo hiểm – bảo dưỡng cho nhà xe.",
+  "lang": "vi",
+  "start_url": "/quan-ly-cong-no-xe-tai/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#01093b",
+  "theme_color": "#01093b",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

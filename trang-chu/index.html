@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* anh Nhận 2026-09-27: BỎ luật "đã đăng nhập thì tự nhảy vào app" — ai bấm link nào thì vào đúng trang đó.
+   Chỉ giữ 1 trường hợp: mở bằng APP ĐÃ CÀI (icon ngoài màn hình, không phải bấm link) → vào app ở chuxetai.com/quan-ly-cong-no-xe-tai. */
+(function(){
+  try{
+    var laAppDaCai = (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
+    if(laAppDaCai){ location.replace('/quan-ly-cong-no-xe-tai/'); }
+  }catch(e){}
+})();
+</script>
+<meta name="sua:hotline" content="0707.707.115"><meta name="sua:zalo" content="0707707115">
+<title data-sua="seo.tieu_de">chuxetai.com — Đồ nghề số cho chủ xe tải: app quản xe, tìm hàng, web nhà xe</title>
+<meta data-sua-noi-dung="seo.mo_ta" name="description" content="Kệ đồ nghề số cho chủ xe tải: app quản xe biết lãi lỗ từng chuyến (dùng thử 30 ngày), tìm hàng chiều về, web nhà xe, bài lên Google, khoá học quảng cáo Facebook. Làm bởi một chủ xe tải đang chạy đội xe thật.">
+<link rel="canonical" href="https://chuxetai.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chuxetai.com/">
+<meta property="og:site_name" content="chuxetai.com">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="chuxetai.com — Đồ nghề số cho chủ xe tải">
+<meta property="og:description" content="App quản xe, tìm hàng chiều về, web nhà xe, bài lên Google, khoá học quảng cáo. Anh cần cái nào dùng cái đó.">
+<meta name="twitter:card" content="summary">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#01093b">
+<link rel="icon" type="image/png" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"chuxetai.com","url":"https://chuxetai.com/","logo":"https://chuxetai.com/icon-512.png","telephone":"+84707707115","parentOrganization":{"@type":"Organization","name":"Công ty TNHH Vận Tải và Chuyển Nhà Hùng Vương","taxID":"0316324699"}}
+</script>
+<style>
+  :root{
+    --bg:#eef1f8; --panel:#ffffff; --line:#e4e8f2;
+    --text:#0b1233; --text-soft:#39416b; --muted:#68708e;
+    --brand:#eb3309; --brand-dark:#b02607; --brand-tint:#fff1ec;
+    --navy:#01093b; --navy-2:#0a1550; --navy-3:#16215f;
+    --good:#12833f; --good-tint:#e9f7ee;
+    --gold:#b5730a; --gold-tint:#fff4dd;
+    --blue:#1f5fd1; --blue-tint:#e8f0fd;
+    --shadow:0 1px 2px rgba(1,9,59,.06),0 8px 30px rgba(1,9,59,.08);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      color-scheme:dark;
+      --bg:#070b1c; --panel:#0d1330; --line:#243056;
+      --text:#eef1fb; --text-soft:#bcc4e2; --muted:#8b93b6;
+      --brand:#ff5a2b; --brand-dark:#ff7d55; --brand-tint:#2a140d;
+      --navy:#020826; --navy-2:#0a1550; --navy-3:#16215f;
+      --good:#4cc47e; --good-tint:#123720;
+      --gold:#f5b301; --gold-tint:#2a2206;
+      --blue:#7fa8f5; --blue-tint:#15224a;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.45);
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --bg:#070b1c; --panel:#0d1330; --line:#243056;
+    --text:#eef1fb; --text-soft:#bcc4e2; --muted:#8b93b6;
+    --brand:#ff5a2b; --brand-dark:#ff7d55; --brand-tint:#2a140d;
+    --navy:#020826; --navy-2:#0a1550; --navy-3:#16215f;
+    --good:#4cc47e; --good-tint:#123720;
+    --gold:#f5b301; --gold-tint:#2a2206;
+    --blue:#7fa8f5; --blue-tint:#15224a;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.45);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  a{color:inherit}
+  img{max-width:100%}
+  h1,h2,h3{margin:0;text-wrap:balance;line-height:1.25}
+  p{margin:0}
+  .tnum{font-variant-numeric:tabular-nums}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:6px}
+
+  /* ---- Header ---- */
+  .site-head{position:sticky;top:0;z-index:30;background:var(--panel);border-bottom:1px solid var(--line)}
+  .site-head .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+  .brand-logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.01em;font-size:19px;text-decoration:none}
+  .brand-mark{width:34px;height:34px;border-radius:9px;background:var(--brand);color:#fff;display:grid;place-items:center;font-size:19px;font-weight:800;box-shadow:0 4px 12px rgba(235,51,9,.35)}
+  .nav-links{display:flex;align-items:center;gap:22px;font-size:14.5px;font-weight:700}
+  .nav-links a{text-decoration:none;color:var(--text-soft)}
+  .nav-links a:hover{color:var(--brand-dark)}
+  .nav-cta{display:flex;align-items:center;gap:16px}
+  .nav-cta .login{text-decoration:none;color:var(--text-soft);font-size:14.5px;font-weight:700}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--brand);color:#fff;text-decoration:none;font-size:14.5px;font-weight:800;padding:9px 16px;border-radius:10px;border:0;white-space:nowrap;cursor:pointer;font-family:inherit}
+  .btn:hover{background:var(--brand-dark)}
+  .btn.ghost{background:transparent;color:var(--text);border:1.5px solid var(--line)}
+  .btn.ghost:hover{border-color:var(--brand);color:var(--brand-dark)}
+  .btn.lg{font-size:16px;padding:13px 22px;border-radius:12px}
+  .burger{display:none;appearance:none;background:transparent;border:1px solid var(--line);border-radius:9px;width:40px;height:38px;font-size:18px;color:var(--text);cursor:pointer}
+  .m-menu{display:none;flex-direction:column;padding:0 0 12px;gap:2px}
+  .m-menu a{text-decoration:none;padding:10px 4px;font-weight:700;color:var(--text-soft);border-top:1px solid var(--line)}
+  .m-menu.open{display:flex}
+
+  /* ---- Hero ---- */
+  .hero{background:var(--navy);color:#fff;border-radius:22px;margin-top:22px;padding:44px 40px;display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;background:radial-gradient(closest-side,rgba(235,51,9,.28),transparent);pointer-events:none}
+  .eyebrow{font-size:12.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#ffd23c}
+  .hero h1{font-size:clamp(28px,4.2vw,44px);font-weight:800;letter-spacing:-.02em;margin:10px 0 14px}
+  .hero h1 b{color:#ffd23c}
+  .hero .lead{color:#c7cde8;font-size:17px;max-width:56ch}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+  .hero-cta .btn.ghost{color:#fff;border-color:rgba(255,255,255,.35)}
+  .hero-cta .btn.ghost:hover{border-color:#fff;color:#fff}
+  .hero .note{font-size:13.5px;color:#9aa3cc;margin-top:12px}
+  .shelf{position:relative;z-index:1;background:var(--navy-2);border:1px solid #1f2b6b;border-radius:16px;padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .shelf a{background:var(--navy-3);border-radius:12px;padding:12px;display:grid;gap:4px;text-decoration:none;font-size:13.5px;color:#c7cde8;transition:transform .15s}
+  .shelf a:hover{transform:translateY(-2px)}
+  .shelf b{color:#fff;font-size:15px}
+  .shelf .tag{font-size:11px;font-weight:800;border-radius:5px;padding:1px 7px;justify-self:start;color:#01093b;background:#ffd23c}
+  .shelf .tag.g{background:#7fe0a5}
+  .shelf .tag.b{background:#cfe0ff}
+  .shelf a.wide{grid-column:1/-1}
+
+  section{padding:64px 0 0}
+  .sec-head{display:grid;gap:8px;margin-bottom:24px;max-width:720px}
+  .sec-head .eyebrow{color:var(--brand)}
+  .sec-head h2{font-size:clamp(24px,3vw,32px);font-weight:800;letter-spacing:-.01em}
+  .sec-head p{color:var(--text-soft);font-size:16.5px}
+
+  /* ---- Vướng gì ---- */
+  .tabs{display:flex;gap:8px;flex-wrap:wrap}
+  .tab{appearance:none;border:1.5px solid var(--line);background:var(--panel);border-radius:999px;padding:9px 16px;font:700 14.5px 'Segoe UI',system-ui,sans-serif;color:var(--text-soft);cursor:pointer}
+  .tab[aria-selected="true"]{background:var(--navy-2);border-color:var(--navy-2);color:#fff}
+  .pain{margin-top:14px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;box-shadow:var(--shadow)}
+  .pain .noi{font-size:17px;font-weight:600}
+  .pain .goi{color:var(--text-soft);margin-top:6px}
+  .pain .goi b{color:var(--good)}
+
+  /* ---- Kệ sản phẩm ---- */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;grid-template-rows:auto auto auto 1fr auto auto;gap:10px;box-shadow:var(--shadow)}
+  .card.feature{grid-column:span 2;grid-template-columns:1fr 1fr;grid-template-rows:none;gap:22px;border-color:var(--brand)}
+  .card .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--brand-tint);color:var(--brand)}
+  .card .ic svg{width:24px;height:24px}
+  .card h3{font-size:19px;font-weight:800}
+  .card .desc{color:var(--text-soft);font-size:15px}
+  .card ul{margin:0;padding-left:0;list-style:none;display:grid;gap:6px;font-size:14.5px;color:var(--text-soft)}
+  .card ul li{display:flex;gap:8px}
+  .card ul li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--good);margin-top:9px}
+  .badge{font-size:12px;font-weight:800;border-radius:6px;padding:2px 9px;justify-self:start}
+  .badge.try{background:var(--good-tint);color:var(--good)}
+  .badge.free{background:var(--gold-tint);color:var(--gold)}
+  .badge.pay{background:var(--blue-tint);color:var(--blue)}
+  .price{font-weight:800;font-size:15px;border-top:1px dashed var(--line);padding-top:10px}
+  .price small{font-weight:600;color:var(--muted);font-size:13px}
+  .card .actions{display:flex;gap:8px;flex-wrap:wrap}
+  .card .actions .btn{flex:1}
+  .card .duong{justify-self:start;font-weight:700;font-size:14px;color:var(--brand);text-decoration:none;word-break:break-all}
+  .card .duong:hover{text-decoration:underline}
+  .feature .col{display:grid;gap:10px;align-content:start}
+  .mini{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:10px;align-content:start;font-size:14px}
+  .mini .row{display:flex;justify-content:space-between;gap:10px}
+  .mini .row span{color:var(--muted)}
+  .mini .lai{background:var(--good-tint);color:var(--good);font-weight:800;border-radius:10px;padding:10px 12px;display:flex;justify-content:space-between}
+  .mini .nhac{font-size:13px;color:var(--text-soft);border-left:3px solid var(--gold);padding-left:10px}
+
+  /* ---- Cách dùng thử ---- */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:b}
+  .step{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;gap:8px;align-content:start}
+  .step::before{counter-increment:b;content:counter(b);width:32px;height:32px;border-radius:50%;background:var(--navy-2);color:#fff;display:grid;place-items:center;font-weight:800}
+  .step h3{font-size:17px;font-weight:800}
+  .step p{font-size:14.5px;color:var(--text-soft)}
+  .assure{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14.5px;color:var(--text-soft)}
+  .assure span{display:flex;gap:6px;align-items:center}
+  .assure svg{flex:none;color:var(--good)}
+
+  /* ---- Lộ trình ---- */
+  .road{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .road a{padding:20px;text-decoration:none;display:grid;gap:6px;border-right:1px solid var(--line);align-content:start}
+  .road a:last-child{border-right:0}
+  .road a:hover{background:var(--brand-tint)}
+  .road .n{font-size:12.5px;font-weight:800;color:var(--brand);letter-spacing:.08em;text-transform:uppercase}
+  .road b{font-size:16.5px}
+  .road p{font-size:14px;color:var(--text-soft)}
+  .road .go{font-size:14px;font-weight:800;color:var(--brand-dark);margin-top:4px}
+
+  /* ---- Nhận là ai ---- */
+  .about{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:32px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start}
+  .avatar{width:96px;height:96px;border-radius:50%;background:var(--navy-2);color:#ffd23c;display:grid;place-items:center;font-weight:800;font-size:32px}
+  .about h2{font-size:clamp(22px,2.6vw,28px);font-weight:800}
+  .about .role{color:var(--muted);font-size:14.5px;margin:4px 0 14px}
+  .about p+p{margin-top:10px}
+  .about p{color:var(--text-soft);max-width:68ch}
+  .about strong{color:var(--text)}
+
+  /* ---- Chốt ---- */
+  .final{margin-top:64px;background:var(--navy);color:#fff;border-radius:22px;padding:40px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+  .final h2{font-size:clamp(22px,3vw,30px);font-weight:800}
+  .final p{color:#c7cde8;margin-top:8px}
+  .final .hero-cta{margin-top:0}
+  .phone{font-weight:800;color:#ffd23c;white-space:nowrap}
+
+  /* ---- Footer ---- */
+  .site-foot{margin-top:64px;border-top:1px solid var(--line);background:var(--panel);padding:36px 0 110px}
+  .f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+  .f-col{display:grid;gap:8px;align-content:start;font-size:14.5px}
+  .f-col h4{margin:0 0 4px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .f-col a{text-decoration:none;color:var(--text-soft)}
+  .f-col a:hover{color:var(--brand-dark)}
+  .f-desc{color:var(--text-soft);font-size:14.5px}
+  .f-legal{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+
+  /* ---- Thanh dưới đáy (điện thoại) ---- */
+  .dock{position:fixed;left:0;right:0;bottom:0;z-index:40;display:none;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:var(--panel);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(1,9,59,.08)}
+  .dock a{flex:1;text-align:center;text-decoration:none;font-weight:800;font-size:14px;padding:11px 6px;border-radius:10px}
+  .dock .z{background:#0068ff;color:#fff}
+  .dock .g{background:var(--good-tint);color:var(--good)}
+  .dock .d{background:var(--brand);color:#fff}
+
+  @media (max-width:960px){
+    .grid{grid-template-columns:1fr 1fr}
+    .card.feature{grid-column:1/-1}
+    .steps{grid-template-columns:1fr 1fr}
+    .road{grid-template-columns:1fr 1fr}
+    .road a:nth-child(2){border-right:0}
+    .road a:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .f-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:760px){
+    .nav-links,.nav-cta .login,.nav-cta .btn{display:none}
+    .burger{display:block}
+    .hero{grid-template-columns:1fr;padding:30px 22px;border-radius:18px}
+    .card.feature{grid-template-columns:1fr}
+    .pain{grid-template-columns:1fr}
+    .final{grid-template-columns:1fr;padding:28px 22px}
+    .about{grid-template-columns:1fr;padding:24px}
+    .dock{display:flex}
+  }
+  @media (max-width:560px){
+    .grid,.steps,.road{grid-template-columns:1fr}
+    .road a{border-right:0;border-bottom:1px solid var(--line)}
+    .road a:last-child{border-bottom:0}
+    .f-grid{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.shelf a{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand-logo" href="/"><span class="brand-mark">X</span><span>chuxetai<span style="color:var(--brand)">.com</span></span></a>
+      <nav class="nav-links" aria-label="Menu chính">
+        <a href="#san-pham">Sản phẩm</a>
+        <a href="/quan-ly-xe">App quản xe</a>
+        <a href="/chuxetai-goi-cuoc.html">Bảng giá</a>
+        <a href="/blog/">Blog</a>
+        <a href="#nhan-la-ai">Nhận là ai</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="login" href="/quan-ly-cong-no-xe-tai/">Đăng nhập</a>
+        <a class="btn" href="/quan-ly-cong-no-xe-tai/">Dùng thử 30 ngày</a>
+        <button class="burger" type="button" aria-label="Mở menu" aria-controls="mMenu" aria-expanded="false" id="burger">☰</button>
+      </div>
+    </div>
+    <nav class="m-menu" id="mMenu" aria-label="Menu điện thoại">
+      <a href="#san-pham">Sản phẩm</a>
+      <a href="/quan-ly-xe">App quản xe</a>
+      <a href="/chuxetai-goi-cuoc.html">Bảng giá</a>
+      <a href="/blog/">Blog</a>
+      <a href="#nhan-la-ai">Nhận là ai</a>
+      <a href="/quan-ly-cong-no-xe-tai/">Đăng nhập</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <div>
+      <span class="eyebrow" data-sua="dau.nhan">Làm bởi một chủ xe tải, cho anh em chủ xe tải</span>
+      <h1 data-sua="dau.tieu_de">Đồ nghề số để xe <b>có hàng chạy đều</b> và biết lời lỗ từng chuyến</h1>
+      <p class="lead" data-sua="dau.mo_ta">App quản xe, tin Zalo thành lệnh điều xe, tìm hàng chiều về, web nhà xe, bài lên Google, khoá học quảng cáo. Anh cần cái nào dùng cái đó, không ép mua trọn bộ.</p>
+      <div class="hero-cta">
+        <a class="btn lg" data-sua="dau.nut1" href="/quan-ly-cong-no-xe-tai/">Dùng thử app 30 ngày</a>
+        <a class="btn lg ghost" data-sua="dau.nut2" href="#san-pham">Xem các sản phẩm</a>
+      </div>
+      <p class="note" data-sua="dau.ghi_chu">Vào xem thử bằng dữ liệu mẫu, chưa cần đăng ký. Không nhập thẻ, không tự trừ tiền.</p>
+    </div>
+    <div class="shelf" aria-label="Các sản phẩm" data-ke="ke-nho">
+      <a data-o="tim-hang" data-sua-link="ke-nho.tim-hang.link" href="https://timhangxetai.com/nha-xe"><span class="tag" data-sua="ke-nho.tim-hang.nhan">Miễn phí</span><b data-sua="ke-nho.tim-hang.ten">Tìm hàng</b><span data-sua="ke-nho.tim-hang.mo_ta">Đơn chủ hàng hợp tuyến</span></a>
+      <a data-o="cong-no" data-sua-link="ke-nho.cong-no.link" href="/quan-ly-xe"><span class="tag g" data-sua="ke-nho.cong-no.nhan">Dùng thử 30 ngày</span><b data-sua="ke-nho.cong-no.ten">Quản lý công nợ</b><span data-sua="ke-nho.cong-no.mo_ta">Lời lỗ từng chuyến, công nợ, lương</span></a>
+      <a data-o="ai-dieu-xe" data-sua-link="ke-nho.ai-dieu-xe.link" href="https://zalo.chuxetai.com/dieu-xe"><span class="tag g" data-sua="ke-nho.ai-dieu-xe.nhan">Dùng thử miễn phí</span><b data-sua="ke-nho.ai-dieu-xe.ten">AI điều xe 24/7</b><span data-sua="ke-nho.ai-dieu-xe.mo_ta">Đọc tin Zalo, ra lệnh điều xe</span></a>
+      <a data-o="bot-cham-soc" data-sua-link="ke-nho.bot-cham-soc.link" href="/bot-cham-soc-khach"><span class="tag g" data-sua="ke-nho.bot-cham-soc.nhan">Mới</span><b data-sua="ke-nho.bot-cham-soc.ten">Bot chăm sóc khách Zalo</b><span data-sua="ke-nho.bot-cham-soc.mo_ta">Tự nhắn khách cũ, khách quay lại</span></a>
+      <a data-o="web-nha-xe" data-sua-link="ke-nho.web-nha-xe.link" href="#web-nha-xe"><span class="tag" data-sua="ke-nho.web-nha-xe.nhan">Tặng</span><b data-sua="ke-nho.web-nha-xe.ten">Web nhà xe</b><span data-sua="ke-nho.web-nha-xe.mo_ta">Khách thấy nhà xe trên Internet</span></a>
+      <a data-o="viet-bai" data-sua-link="ke-nho.viet-bai.link" href="https://web.chuxetai.com/seo"><span class="tag b" data-sua="ke-nho.viet-bai.nhan">Theo tuyến</span><b data-sua="ke-nho.viet-bai.ten">Viết bài web</b><span data-sua="ke-nho.viet-bai.mo_ta">Giới thiệu dịch vụ, lên Google</span></a>
+      <a class="wide" data-o="khoa-hoc" data-sua-link="ke-nho.khoa-hoc.link" href="https://maivannhan.com"><span class="tag" data-sua="ke-nho.khoa-hoc.nhan">Học thử miễn phí</span><b data-sua="ke-nho.khoa-hoc.ten">Khoá học Facebook Ads</b><span data-sua="ke-nho.khoa-hoc.mo_ta">Riêng cho xe tải</span></a>
+    </div>
+  </div>
+
+  <section id="vuong">
+    <div class="sec-head">
+      <span class="eyebrow">Bắt đầu từ chỗ đau</span>
+      <h2>Anh đang vướng chuyện gì?</h2>
+      <p>Chọn một cái, trang chỉ đúng món nên dùng trước.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Vấn đề của chủ xe">
+      <button class="tab" type="button" role="tab" id="t0" aria-controls="pain" aria-selected="true" data-i="0">Xe nằm bãi, về rỗng</button>
+      <button class="tab" type="button" role="tab" id="t1" aria-controls="pain" aria-selected="false" data-i="1">Sổ sách rối, không biết lời lỗ</button>
+      <button class="tab" type="button" role="tab" id="t2" aria-controls="pain" aria-selected="false" data-i="2">Khách không tìm thấy mình</button>
+      <button class="tab" type="button" role="tab" id="t3" aria-controls="pain" aria-selected="false" data-i="3">Muốn tự chạy quảng cáo</button>
+    </div>
+    <div class="pain" id="pain" role="tabpanel" aria-labelledby="t0">
+      <div><p class="noi" id="painNoi">Chở được chuyến đi, chiều về ngồi bãi gọi khắp nơi xin hàng. Xin không ra thì chạy rỗng, đốt dầu bằng tiền túi.</p><p class="goi" id="painGoi">Nên dùng trước: <b>Tìm hàng xe tải</b>, trải nghiệm miễn phí với đơn thật.</p></div>
+      <a class="btn lg" id="painBtn" href="https://timhangxetai.com/nha-xe">Vào tìm hàng</a>
+    </div>
+  </section>
+
+  <section id="san-pham">
+    <div class="sec-head">
+      <span class="eyebrow" data-sua="ke.nhan">Kệ đồ nghề</span>
+      <h2 data-sua="ke.tieu_de">Sản phẩm dành cho chủ xe tải</h2>
+      <p data-sua="ke.mo_ta">Phần mềm thì bấm dùng thử ngay. Dịch vụ thì xem cách làm hoặc nhắn Zalo hỏi thẳng.</p>
+    </div>
+    <div class="grid" data-ke="san-pham">
+      <article class="card" data-o="tim-hang">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span>
+        <span class="badge free" data-sua="san-pham.tim-hang.nhan">Trải nghiệm miễn phí</span>
+        <h3 data-sua="san-pham.tim-hang.ten">Tìm hàng xe tải</h3>
+        <p class="desc" data-sua="san-pham.tim-hang.mo_ta">Chủ hàng đăng chuyến, nhà xe xem đơn hợp tuyến gần mình, báo giá và nhận chuyến. Bớt cảnh chạy rỗng chiều về.</p>
+        <p class="price" data-sua="san-pham.tim-hang.gia">timhangxetai.com</p>
+        <div class="actions"><a class="btn" data-sua="san-pham.tim-hang.nut" data-sua-link="san-pham.tim-hang.link" href="https://timhangxetai.com/nha-xe">Xem chi tiết</a></div>
+      </article>
+      <article class="card feature" data-o="cong-no">
+        <div class="col">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1.5" y="6" width="13" height="11" rx="1.5"/><path d="M14.5 9.5h4l3 3.5v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></svg></span>
+          <span class="badge try" data-sua="san-pham.cong-no.nhan">Dùng thử 30 ngày</span>
+          <h3 data-sua="san-pham.cong-no.ten">Quản lý công nợ chuxetai</h3>
+          <p class="desc" data-sua="san-pham.cong-no.mo_ta">Chuyến chạy xong là biết lời hay lỗ. Công nợ khách tự cộng, lương tài xế tự tính, đăng kiểm sắp hết hạn app nhắc trước.</p>
+          <ul>
+            <li>Dán tin nhắn Zalo của khách, app tự điền lệnh</li>
+            <li>Tài xế nhận lệnh và chụp chứng từ trên điện thoại</li>
+            <li>Sổ sách tự sao lưu vào Google Sheet của anh</li>
+          </ul>
+          <div class="actions">
+            <a class="btn" data-sua="san-pham.cong-no.nut" data-sua-link="san-pham.cong-no.link" href="/quan-ly-xe">Xem chi tiết</a>
+          </div>
+        </div>
+        <div class="mini tnum" aria-label="Ví dụ một chuyến trong app (số minh hoạ)">
+          <div class="row"><b>KCN Sóng Thần → Đà Nẵng</b><span>ví dụ</span></div>
+          <div class="row"><span>Cước thu khách</span><b>12.500.000 đ</b></div>
+          <div class="row"><span>Dầu, đường, bốc xếp</span><b>9.320.000 đ</b></div>
+          <div class="lai"><span>Lãi chuyến này</span><span>3.180.000 đ</span></div>
+          <p class="nhac">Khách A. Tuấn còn nợ 38.200.000 đ, đã 2 tháng</p>
+          <p class="nhac">Xe 51C-123.45: đăng kiểm còn 12 ngày</p>
+        </div>
+      </article>
+      <article class="card" id="tin-zalo" data-o="ai-dieu-xe">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M9 12h6M12 9v6"/></svg></span>
+        <span class="badge free" data-sua="san-pham.ai-dieu-xe.nhan">Dùng thử miễn phí</span>
+        <h3 data-sua="san-pham.ai-dieu-xe.ten">AI điều xe 24/7</h3>
+        <p class="desc" data-sua="san-pham.ai-dieu-xe.mo_ta">AI đọc tin khách đặt xe trong nhóm Zalo 24/7, tự tách thành lệnh nháp và gợi ý xe. Anh chỉ việc duyệt, tin nào treo quá 15 phút là báo đỏ.</p>
+        <div class="actions"><a class="btn" data-sua="san-pham.ai-dieu-xe.nut" data-sua-link="san-pham.ai-dieu-xe.link" href="https://zalo.chuxetai.com/dieu-xe">Xem chi tiết</a></div>
+      </article>
+      <article class="card" id="cham-soc-zalo" data-o="bot-cham-soc">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M12 8v4l2.5 2"/></svg></span>
+        <span class="badge try" data-sua="san-pham.bot-cham-soc.nhan">Mới</span>
+        <h3 data-sua="san-pham.bot-cham-soc.ten">Bot chăm sóc khách cũ qua Zalo</h3>
+        <p class="desc" data-sua="san-pham.bot-cham-soc.mo_ta">Gắn nhãn "Khách hàng" trong Zalo là bot tự nhắn hỏi thăm khách theo lịch, cách vài ngày một tin, kèm hotline nhà xe. Khách nhắn HỦY là dừng ngay. Khách cũ nhớ tới anh, gọi lại thuê xe.</p>
+        <div class="actions"><a class="btn" data-sua="san-pham.bot-cham-soc.nut" data-sua-link="san-pham.bot-cham-soc.link" href="/bot-cham-soc-khach">Tìm hiểu thêm</a><a class="btn ghost" href="https://zalo.me/0707707115">Nhắn Zalo</a></div>
+      </article>
+      <article class="card" id="web-nha-xe" data-o="web-nha-xe">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span>
+        <span class="badge free" data-sua="san-pham.web-nha-xe.nhan">Tặng</span>
+        <h3 data-sua="san-pham.web-nha-xe.ten">Web giúp khách hàng nhìn thấy nhà xe trên Internet</h3>
+        <p class="desc" data-sua="san-pham.web-nha-xe.mo_ta">Web mang tên nhà xe anh, có số điện thoại, nút gọi, tuyến anh chạy. Khách xem thấy tin, gọi thẳng anh.</p>
+        <div class="actions"><a class="btn" data-sua="san-pham.web-nha-xe.nut" data-sua-link="san-pham.web-nha-xe.link" href="https://web.chuxetai.com">Xem chi tiết</a></div>
+      </article>
+      <article class="card" data-o="viet-bai">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"/><path d="m5 15 5-5 3.5 3.5L20 7"/><path d="M15 7h5v5"/></svg></span>
+        <span class="badge pay" data-sua="san-pham.viet-bai.nhan">Báo giá theo tuyến</span>
+        <h3 data-sua="san-pham.viet-bai.ten">Dịch vụ viết bài web giới thiệu dịch vụ</h3>
+        <p class="desc" data-sua="san-pham.viet-bai.mo_ta">Mỗi tuyến anh chạy là một bài. Khách gõ "xe tải đi ..." là thấy nhà xe anh, không tốn tiền quảng cáo mỗi ngày.</p>
+        <div class="actions"><a class="btn" data-sua="san-pham.viet-bai.nut" data-sua-link="san-pham.viet-bai.link" href="https://web.chuxetai.com/seo">Xem chi tiết</a></div>
+      </article>
+      <article class="card" data-o="khoa-hoc">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3.5 2.5 8.5 2.5 12 0v-5"/></svg></span>
+        <span class="badge try" data-sua="san-pham.khoa-hoc.nhan">Học thử miễn phí</span>
+        <h3 data-sua="san-pham.khoa-hoc.ten">Khoá học quảng cáo Facebook riêng cho xe tải</h3>
+        <p class="desc" data-sua="san-pham.khoa-hoc.mo_ta">100+ video chỉ từng bước để anh tự chạy quảng cáo, khách tự gọi xe, không phải thuê người ngoài.</p>
+        <p class="price" data-sua="san-pham.khoa-hoc.gia">Miễn phí → Cơ bản → PRO</p>
+        <div class="actions"><a class="btn" data-sua="san-pham.khoa-hoc.nut" data-sua-link="san-pham.khoa-hoc.link" href="https://maivannhan.com">Xem chi tiết</a></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="dung-thu">
+    <div class="sec-head">
+      <span class="eyebrow">Dùng thử app quản xe</span>
+      <h2>Từ lúc bấm nút tới lúc có sổ sách thật</h2>
+      <p>Không cài đặt, không cần rành máy tính. Mở trên điện thoại hay máy tính đều chạy.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Xem thử với dữ liệu mẫu</h3><p>Mở chuxetai.com/quan-ly-cong-no-xe-tai là thấy ngay một đội xe mẫu. Bấm thoải mái, chưa cần đăng ký.</p></div>
+      <div class="step"><h3>Đăng nhập Google</h3><p>Ưng rồi thì đăng nhập bằng Google. Một phút là có công ty riêng của anh, bắt đầu 30 ngày dùng thử.</p></div>
+      <div class="step"><h3>Thêm xe, tài xế, tạo lệnh</h3><p>Nhập biển số, gửi link mời cho tài xế. Tạo lệnh đầu tiên, chạy xong là vào sổ.</p></div>
+      <div class="step"><h3>Hết 30 ngày thì gia hạn</h3><p>Gọi 0707.707.115, chuyển khoản, kích hoạt trong ngày. Chưa gia hạn thì app chỉ cho xem, số liệu còn nguyên.</p></div>
+    </div>
+    <div class="assure">
+      <span><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l3.5 3.5L16 5.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Không nhập thẻ ngân hàng</span>
+      <span><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l3.5 3.5L16 5.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Không tự trừ tiền</span>
+      <span><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l3.5 3.5L16 5.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Không ràng buộc hợp đồng</span>
+      <span><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l3.5 3.5L16 5.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>App nhắc trước khi hết hạn</span>
+    </div>
+  </section>
+
+  <section id="lo-trinh">
+    <div class="sec-head">
+      <span class="eyebrow" data-sua="lo-trinh.nhan">Lộ trình</span>
+      <h2 data-sua="lo-trinh.tieu_de">Anh nên bắt đầu từ đâu?</h2>
+      <p data-sua="lo-trinh.mo_ta">Đây là thứ tự tôi đã làm cho đội xe của mình. Làm tới đâu dừng tới đó cũng được.</p>
+    </div>
+    <div class="road">
+      <a href="#web-nha-xe" data-sua-link="lo-trinh.b1.link"><span class="n">Bước 1</span><b data-sua="lo-trinh.b1.ten">Có web nhà xe</b><p data-sua="lo-trinh.b1.mo_ta">Để khách có chỗ xem, có chỗ tin.</p><span class="go" data-sua="lo-trinh.b1.nut">Nhận web →</span></a>
+      <a href="https://web.chuxetai.com/seo" data-sua-link="lo-trinh.b2.link"><span class="n">Bước 2</span><b data-sua="lo-trinh.b2.ten">Đưa bài lên Google</b><p data-sua="lo-trinh.b2.mo_ta">Khách tự tìm thấy anh khi cần xe.</p><span class="go" data-sua="lo-trinh.b2.nut">Xem cách làm →</span></a>
+      <a href="https://maivannhan.com" data-sua-link="lo-trinh.b3.link"><span class="n">Bước 3</span><b data-sua="lo-trinh.b3.ten">Tự chạy quảng cáo</b><p data-sua="lo-trinh.b3.mo_ta">Muốn có khách nhanh hơn thì học cách tôi đang làm.</p><span class="go" data-sua="lo-trinh.b3.nut">Học thử →</span></a>
+      <a href="/quan-ly-cong-no-xe-tai/" data-sua-link="lo-trinh.b4.link"><span class="n">Bước 4</span><b data-sua="lo-trinh.b4.ten">Quản xe cho gọn</b><p data-sua="lo-trinh.b4.mo_ta">Xe chạy đều rồi thì biết lời lỗ từng chuyến.</p><span class="go" data-sua="lo-trinh.b4.nut">Dùng thử 30 ngày →</span></a>
+    </div>
+  </section>
+
+  <section id="nhan-la-ai">
+    <div class="about">
+      <div class="avatar" aria-hidden="true">MN</div>
+      <div>
+        <h2 data-sua="nhan.tieu_de">Mai Văn Nhận là ai?</h2>
+        <p class="role" data-sua="nhan.chuc">Chủ Công ty TNHH Vận Tải và Chuyển Nhà Hùng Vương</p>
+        <p data-sua="nhan.doan1">Tôi từng tự lái, tự tìm hàng, từng phụ thuộc app và cò, từng để xe nằm bãi mà vẫn trả lãi ngân hàng.</p>
+        <p data-sua="nhan.doan2">Từ 2021 tôi tự làm web, tự chạy quảng cáo Facebook, tự dựng hệ thống chăm khách cho đội xe của mình. Xe có khách gọi trực tiếp, chạy đều hơn, mới dám đầu tư thêm xe.</p>
+        <p>Mọi thứ trên trang này là <strong>những gì tôi đang dùng thật</strong> cho đội xe Hùng Vương, đóng gói lại cho anh em chủ xe.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="final">
+    <div>
+      <h2 data-sua="cuoi.tieu_de">Chưa biết chọn gì? Bắt đầu bằng cái miễn phí.</h2>
+      <p>Xem thử app bằng dữ liệu mẫu, hoặc nhắn Zalo hỏi thẳng. Hotline / Zalo: <span class="phone tnum">0707.707.115</span></p>
+    </div>
+    <div class="hero-cta">
+      <a class="btn lg" href="/quan-ly-cong-no-xe-tai/">Xem thử app</a>
+      <a class="btn lg ghost" href="https://zalo.me/0707707115">Nhắn Zalo</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-col">
+        <a class="brand-logo" href="/"><span class="brand-mark">X</span><span>chuxetai<span style="color:var(--brand)">.com</span></span></a>
+        <p class="f-desc">Đồ nghề số cho chủ xe tải, làm bởi một chủ xe tải đang chạy đội xe thật.</p>
+      </div>
+      <div class="f-col">
+        <h4>Sản phẩm</h4>
+        <a href="/quan-ly-xe">App quản xe</a>
+        <a href="https://zalo.chuxetai.com/dieu-xe">Tin Zalo thành lệnh</a>
+        <a href="https://timhangxetai.com/nha-xe">Tìm hàng xe tải</a>
+        <a href="#web-nha-xe">Web nhà xe</a>
+        <a href="https://web.chuxetai.com/seo">Bài lên Google</a>
+        <a href="https://maivannhan.com">Khoá học Facebook Ads</a>
+      </div>
+      <div class="f-col">
+        <h4>Tài khoản</h4>
+        <a href="/quan-ly-cong-no-xe-tai/">Đăng nhập app</a>
+        <a href="/chuxetai-goi-cuoc.html">Bảng giá app</a>
+        <a href="/blog/">Blog</a>
+      </div>
+      <div class="f-col">
+        <h4>Liên hệ</h4>
+        <a href="tel:0707707115">Tổng đài: 0707.707.115</a>
+        <a href="https://zalo.me/0707707115">Zalo: 0707.707.115</a>
+      </div>
+    </div>
+    <div class="f-legal">
+      <b>CÔNG TY TNHH VẬN TẢI VÀ CHUYỂN NHÀ HÙNG VƯƠNG</b><br>
+      Mã số thuế: <span class="tnum">0316324699</span> · Tổng đài: <span class="tnum">0707.707.115</span><br>
+      © 2026 <b>chuxetai.com</b>
+    </div>
+  </div>
+</footer>
+
+<nav class="dock" aria-label="Liên hệ nhanh">
+  <a class="z" href="https://zalo.me/0707707115">Zalo</a>
+  <a class="g" href="tel:0707707115">Gọi</a>
+  <a class="d" href="/quan-ly-cong-no-xe-tai/">Dùng thử</a>
+</nav>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'), m=document.getElementById('mMenu');
+  b.addEventListener('click',function(){ var o=m.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false'); });
+  m.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ m.classList.remove('open'); b.setAttribute('aria-expanded','false'); }); });
+
+  var data=[
+    {noi:'Chở được chuyến đi, chiều về ngồi bãi gọi khắp nơi xin hàng. Xin không ra thì chạy rỗng, đốt dầu bằng tiền túi.', sp:'Tìm hàng xe tải', them:', trải nghiệm miễn phí với đơn thật.', nut:'Vào tìm hàng', link:'https://timhangxetai.com/nha-xe'},
+    {noi:'Tài xế báo miệng tiền dầu, cuối tháng cộng sổ tới khuya vẫn lệch. Khách nợ ba tháng mới sực nhớ đòi.', sp:'App quản xe', them:', xem thử bằng dữ liệu mẫu rồi dùng thử 30 ngày.', nut:'Xem thử app', link:'/quan-ly-cong-no-xe-tai/'},
+    {noi:'Khách gõ "xe tải đi Đà Nẵng" trên Google mà không thấy nhà xe mình, chỉ thấy nhà xe khác.', sp:'Web nhà xe', them:' (tặng), rồi tới bài lên Google theo từng tuyến.', nut:'Nhắn Zalo nhận web', link:'https://zalo.me/0707707115'},
+    {noi:'Thuê người chạy quảng cáo tốn tiền mà khách gọi không đều, tắt quảng cáo là hết khách.', sp:'Khoá học Facebook Ads', them:', bắt đầu từ bản học thử miễn phí.', nut:'Học thử miễn phí', link:'https://maivannhan.com'}
+  ];
+  var tabs=document.querySelectorAll('.tab'), noi=document.getElementById('painNoi'), goi=document.getElementById('painGoi'), nut=document.getElementById('painBtn'), pane=document.getElementById('pain');
+  function show(i){
+    tabs.forEach(function(t){ t.setAttribute('aria-selected', t.dataset.i==i ? 'true':'false'); });
+    var d=data[i];
+    noi.textContent=d.noi;
+    goi.textContent='Nên dùng trước: ';
+    var s=document.createElement('b'); s.textContent=d.sp; goi.appendChild(s); goi.appendChild(document.createTextNode(d.them));
+    nut.textContent=d.nut; nut.href=d.link;
+    pane.setAttribute('aria-labelledby','t'+i);
+  }
+  tabs.forEach(function(t){ t.addEventListener('click',function(){ show(+t.dataset.i); }); });
+})();
+</script>
+</body>
+</html>

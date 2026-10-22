@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Hai sitemap: trang gioi thieu (goc) va blog (/blog/* do project chuxetai-blog phuc vu)
+Sitemap: https://chuxetai.com/sitemap.xml
+Sitemap: https://chuxetai.com/blog/sitemap.xml

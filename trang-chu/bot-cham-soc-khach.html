@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bot chăm sóc khách cũ qua Zalo cho nhà xe tải | chuxetai</title>
+<meta name="description" content="Bot Zalo chăm sóc khách cũ cho nhà xe tải: tự nhắn khách cũ tin có ích kèm hotline, cách nhau nhiều ngày, khách nhắn HỦY là dừng. Khách nhớ nhà xe mỗi lần cần thuê xe. Dùng thử 7 ngày, sau đó 199.000 đ/tháng.">
+<link rel="canonical" href="https://chuxetai.com/bot-cham-soc-khach">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chuxetai.com/bot-cham-soc-khach">
+<meta property="og:site_name" content="chuxetai.com">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Bot chăm sóc khách cũ qua Zalo cho nhà xe tải | chuxetai">
+<meta property="og:description" content="Khách chở xong một chuyến rồi quên mất anh? Bot nhắn khách cũ tin có ích, đều đặn, kèm hotline. Dùng thử 7 ngày miễn phí.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#01093b">
+<link rel="icon" type="image/png" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+  :root{
+    --bg:#eef1f8; --panel:#ffffff; --card:#ffffff; --line:#e4e8f2;
+    --text:#0b1233; --text-soft:#39416b; --muted:#68708e;
+    --brand:#eb3309; --brand-dark:#b02607; --brand-tint:#fff1ec;
+    --navy:#01093b; --navy-2:#0a1550;
+    --good:#12833f; --good-tint:#e9f7ee;
+    --gold:#b5730a; --gold-tint:#fff4dd; --gold-line:#f2c65a;
+    --shadow:0 1px 2px rgba(1,9,59,.06),0 8px 30px rgba(1,9,59,.08);
+    --radius:14px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#070b1c; --panel:#0d1330; --card:#111a3c; --line:#243056;
+      --text:#eef1fb; --text-soft:#bcc4e2; --muted:#8b93b6;
+      --brand:#ff5a2b; --brand-dark:#ff7d55; --brand-tint:#2a140d;
+      --navy:#020826; --navy-2:#0a1550;
+      --good:#4cc47e; --good-tint:#123720;
+      --gold:#f5b301; --gold-tint:#2a2206; --gold-line:#5a4a12;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.45);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#eef1f8; --panel:#ffffff; --card:#ffffff; --line:#e4e8f2;
+    --text:#0b1233; --text-soft:#39416b; --muted:#68708e;
+    --brand:#eb3309; --brand-dark:#b02607; --brand-tint:#fff1ec;
+    --navy:#01093b; --navy-2:#0a1550; --good:#12833f; --good-tint:#e9f7ee;
+    --gold:#b5730a; --gold-tint:#fff4dd; --gold-line:#f2c65a;
+    --shadow:0 1px 2px rgba(1,9,59,.06),0 8px 30px rgba(1,9,59,.08);
+  }
+  :root[data-theme="dark"]{
+    --bg:#070b1c; --panel:#0d1330; --card:#111a3c; --line:#243056;
+    --text:#eef1fb; --text-soft:#bcc4e2; --muted:#8b93b6;
+    --brand:#ff5a2b; --brand-dark:#ff7d55; --brand-tint:#2a140d;
+    --navy:#020826; --navy-2:#0a1550; --good:#4cc47e; --good-tint:#123720;
+    --gold:#f5b301; --gold-tint:#2a2206; --gold-line:#5a4a12;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.45);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px; margin:0 auto; padding:0 20px}
+  a{color:inherit}
+  .tnum{font-variant-numeric:tabular-nums}
+  img{max-width:100%}
+
+  /* ---- Header dính trên đầu (giống WebPay) ---- */
+  .site-head{position:sticky; top:0; z-index:30; background:var(--panel); border-bottom:1px solid var(--line)}
+  .site-head .bar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0}
+  .brand-logo{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:-.01em; font-size:19px; text-decoration:none}
+  .brand-mark{width:34px; height:34px; border-radius:9px; background:var(--brand); color:#fff; display:grid; place-items:center; font-size:19px; font-weight:800; box-shadow:0 4px 12px rgba(235,51,9,.35)}
+  .nav-links{display:flex; align-items:center; gap:22px; font-size:14.5px; font-weight:700}
+  .nav-links a{text-decoration:none; color:var(--text-soft)}
+  .nav-links a:hover{color:var(--brand-dark)}
+  .nav-cta{display:flex; align-items:center; gap:16px}
+  .nav-cta .login{text-decoration:none; color:var(--text-soft); font-size:14.5px; font-weight:700}
+  .nav-cta .login:hover{color:var(--brand-dark)}
+  .nav-cta .btn{background:var(--brand); color:#fff; text-decoration:none; font-size:14.5px; font-weight:800; padding:9px 16px; border-radius:10px}
+  .nav-cta .btn:hover{background:var(--brand-dark)}
+  .burger{display:none; appearance:none; background:transparent; border:1px solid var(--line); border-radius:9px; width:38px; height:38px; place-items:center; cursor:pointer; color:var(--text); font-size:18px}
+  .m-menu{display:none; border-top:1px solid var(--line); padding:10px 0 14px}
+  .m-menu a{display:block; padding:9px 4px; text-decoration:none; color:var(--text-soft); font-weight:700; font-size:15px}
+  .m-menu a:hover{color:var(--brand-dark)}
+  .m-menu.open{display:block}
+  @media(max-width:820px){
+    .nav-links{display:none}
+    .nav-cta .login{display:none}
+    .burger{display:grid}
+  }
+
+
+  /* ---- Buttons ---- */
+  .btn-lg{display:inline-block; text-decoration:none; font-weight:800; font-size:16px; padding:14px 26px; border-radius:12px; transition:.18s}
+  .btn-lg.primary{background:var(--brand); color:#fff; box-shadow:0 8px 24px rgba(235,51,9,.35)}
+  .btn-lg.primary:hover{background:var(--brand-dark)}
+  .btn-lg.ghost{border:2px solid rgba(255,255,255,.35); color:#fff}
+  .btn-lg.ghost:hover{background:rgba(255,255,255,.1)}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+  .btn-lg.line{border:2px solid var(--brand);color:var(--brand-dark);text-align:center}
+  /* ---- Hero ---- */
+  .hero{background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff;border-radius:22px;padding:44px 30px 38px;margin-top:22px;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;right:-90px;top:-90px;width:320px;height:320px;background:radial-gradient(circle,rgba(235,51,9,.38),transparent 68%);pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .85fr;gap:36px;align-items:center;position:relative;z-index:1}
+  @media(max-width:880px){.hero-grid{grid-template-columns:1fr}}
+  .eyebrow{display:inline-block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:5px 12px;border-radius:999px}
+  .hero h1{margin:.55em 0 .35em;font-size:clamp(27px,4.4vw,42px);line-height:1.14;font-weight:800;letter-spacing:-.015em;text-wrap:balance}
+  .hero .lead{color:#d6dbf2;font-size:16.5px;margin:0 0 10px;max-width:56ch}
+  .hero .note{color:#aab3d8;font-size:13.5px;margin:14px 0 0}
+  .phone{background:#fff;color:#0b1233;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.35);overflow:hidden;max-width:360px;justify-self:center;width:100%}
+  .ph-top{display:flex;gap:10px;align-items:center;background:#0068ff;color:#fff;padding:12px 14px}
+  .ph-top small{display:block;opacity:.8;font-size:12px}
+  .ph-av{width:36px;height:36px;border-radius:50%;background:#fff;color:#0068ff;display:grid;place-items:center;font-weight:800;font-size:13px}
+  .ph-body{background:#e9edf3;padding:14px;display:grid;gap:10px}
+  .ph-day{justify-self:center;font-size:11.5px;color:#68708e;background:#fff;border-radius:999px;padding:2px 10px}
+  .bub{background:#fff;border-radius:14px 14px 14px 4px;padding:10px 12px;font-size:13.5px;line-height:1.5;max-width:92%}
+  .bub.me{justify-self:end;background:#d6e8ff;border-radius:14px 14px 4px 14px}
+  .ph-cap{font-size:12px;color:#39416b;text-align:center}
+  /* ---- Khối chung ---- */
+  section{padding:38px 0}
+  .sec-h{text-align:center;max-width:680px;margin:0 auto 26px}
+  .sec-h h2{font-size:clamp(22px,3.4vw,31px);font-weight:800;letter-spacing:-.015em;margin:0 0 8px;text-wrap:balance}
+  .sec-h p{margin:0;color:var(--muted);font-size:15.5px}
+  .pains,.feats,.objs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .feats{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:860px){.feats{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.pains,.feats,.objs{grid-template-columns:1fr}}
+  .pain-c,.feat,.obj{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+  .pain-c{border-left:4px solid var(--brand)}
+  .pain-c b,.feat b,.obj b{display:block;font-size:16.5px;margin-bottom:6px}
+  .pain-c p,.feat p,.obj p{margin:0;color:var(--text-soft);font-size:15px}
+  .feat .vi{color:var(--good);font-weight:700}
+  .sum{max-width:720px;margin:22px auto 0;text-align:center;font-weight:700;font-size:16.5px}
+  .tl{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:28px 0 0;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  @media(max-width:760px){.tl{grid-template-columns:1fr}}
+  .tl-i{padding:16px;border-right:1px solid var(--line)}
+  .tl-i:last-child{border-right:0}
+  @media(max-width:760px){.tl-i{border-right:0;border-bottom:1px solid var(--line)}}
+  .tl-d{display:inline-block;font-weight:800;color:var(--brand-dark);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+  .tl-i p{margin:6px 0 0;font-size:14.5px;color:var(--text-soft)}
+  .feel{margin-top:24px;background:var(--gold-tint);border:1px solid var(--gold-line);border-radius:var(--radius);padding:22px}
+  .feel h3{margin:0 0 8px;font-size:20px}
+  .feel p{margin:0 0 8px;color:var(--text-soft);font-size:15.5px}
+  .proof{max-width:760px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+  .proof p{margin:0 0 10px;font-size:15.5px;color:var(--text-soft)}
+  .obj a{color:var(--brand-dark);font-weight:700}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+  @media(max-width:760px){.steps{grid-template-columns:1fr 1fr}}
+  .st{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+  .st span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;margin-bottom:8px}
+  .st b{display:block}
+  .st p{margin:4px 0 0;font-size:14px;color:var(--text-soft)}
+  .price-box{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center;background:var(--card);border:2px solid var(--brand);border-radius:20px;padding:28px;box-shadow:var(--shadow);max-width:880px;margin:0 auto}
+  @media(max-width:760px){.price-box{grid-template-columns:1fr}}
+  .badge{display:inline-block;background:var(--good-tint);color:var(--good);font-weight:800;font-size:12.5px;padding:4px 10px;border-radius:999px}
+  .pb-price{margin:10px 0 4px}
+  .pb-price b{font-size:38px;font-weight:800}
+  .pb-price span{color:var(--muted);font-weight:700}
+  .pb-sub{margin:0 0 10px;color:var(--text-soft)}
+  .price-box ul{margin:0;padding-left:20px;color:var(--text-soft)}
+  .pb-r{display:grid;gap:10px}
+  .pb-r .btn-lg{text-align:center}
+  .note2{margin:4px 0 0;font-size:13.5px;color:var(--muted)}
+  .rel{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.rel{grid-template-columns:1fr}}
+  .rel a{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+  .rel a:hover{border-color:var(--brand)}
+  .rel b{display:block;color:var(--brand-dark);margin-bottom:6px;font-size:16.5px}
+  .rel span{color:var(--text-soft);font-size:14.5px}
+  .faq{max-width:780px;margin:0 auto;display:grid;gap:10px}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+  .faq summary{font-weight:800;cursor:pointer}
+  .faq p{margin:8px 0 0;color:var(--text-soft)}
+  .ket{max-width:720px;margin:24px auto 0;text-align:center;color:var(--text-soft);font-size:16px}
+  .final{background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff;border-radius:22px;padding:36px 28px;text-align:center;margin:20px 0 10px}
+  .final h2{margin:0 0 8px;font-size:clamp(22px,3.6vw,32px);font-weight:800;text-wrap:balance}
+  .final p{color:#d6dbf2;margin:0}
+  .final .hero-cta{justify-content:center}
+  /* ---- Chân trang ---- */
+  .site-foot{border-top:1px solid var(--line); background:var(--panel); margin-top:24px}
+  .f-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr 1.2fr; gap:28px; padding:38px 0 26px}
+  @media(max-width:860px){ .f-grid{grid-template-columns:1fr 1fr} }
+  @media(max-width:520px){ .f-grid{grid-template-columns:1fr} }
+  .f-col .brand-logo{margin-bottom:10px; font-size:17px}
+  .f-col .brand-mark{width:30px; height:30px; font-size:16px}
+  .f-col .f-desc{color:var(--muted); font-size:13.5px; max-width:34ch}
+  .f-col h4{margin:0 0 12px; font-size:12.5px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--muted)}
+  .f-col a, .f-col .f-item{display:block; text-decoration:none; color:var(--text-soft); font-size:14px; padding:4px 0}
+  .f-col a:hover{color:var(--brand-dark)}
+  .f-legal{border-top:1px solid var(--line); padding:18px 0 30px; text-align:center; color:var(--muted); font-size:13px}
+  .f-legal b{color:var(--text-soft)}
+  .sticky-cta{display:none}
+  @media(max-width:760px){
+    .sticky-cta{display:flex;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--panel);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(1,9,59,.12)}
+    .sticky-cta a{text-decoration:none;font-weight:800;border-radius:10px;padding:12px;text-align:center}
+    .sticky-cta .s-main{flex:1;background:var(--brand);color:#fff}
+    .sticky-cta .s-call{border:2px solid var(--brand);color:var(--brand-dark);min-width:76px}
+    body{padding-bottom:72px}
+  }
+</style>
+<!-- META PIXEL "CHỦ XE TẢI" 850111651207622 (19/10/2026, anh Nhận: "Gắn pixel vào cho anh"): PageView ở trang bán hàng chuxetai.com. Lỗi/bị chặn không ảnh hưởng trang. -->
+<script>
+(function(){
+  try{
+    var h=location.hostname; if(h!=='chuxetai.com' && h!=='www.chuxetai.com') return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','850111651207622');
+    fbq('track','PageView',{},{eventID:'PageView_'+Date.now().toString(36)+'_'+Math.random().toString(36).slice(2,8)});
+  }catch(e){}
+})();
+</script>
+<!-- HẾT META PIXEL -->
+<!-- NGUỒN QUẢNG CÁO (19/10/2026, anh Nhận: "thêm mã vào để biết khách đến từ quảng cáo nào").
+     Link quảng cáo mang ?utm_...&fbclid=... → lưu vào máy khách (localStorage "cx_nguon"). Cùng tên miền chuxetai.com nên phần mềm
+     /quan-ly-cong-no-xe-tai/ đọc được: lúc chủ tạo công ty, app ghi vào hồ sơ công ty (congTy.nguonQC) và gửi kèm sự kiện StartTrial.
+     Chỉ ghi khi link CÓ mã (khách tự gõ lại trang không xoá nguồn cũ). Gỡ: xoá khối này tới "HẾT NGUỒN QUẢNG CÁO". -->
+<script>
+(function(){
+  try{
+    var q=new URLSearchParams(location.search), k=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_id','fbclid'], n={}, co=false;
+    k.forEach(function(x){ var v=q.get(x); if(v){ n[x]=String(v).slice(0,150); co=true; } });
+    if(!co) return;
+    n.trang=location.pathname.slice(0,80); n.luc=Date.now();
+    localStorage.setItem('cx_nguon',JSON.stringify(n));
+  }catch(e){}
+})();
+</script>
+<!-- HẾT NGUỒN QUẢNG CÁO -->
+</head>
+<body>
+
+<!-- ============ HEADER DÍNH TRÊN ĐẦU ============ -->
+<header class="site-head">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand-logo" href="/"><span class="brand-mark">X</span><span class="brand-name">chuxetai<span style="color:var(--brand)">.com</span></span></a>
+      <nav class="nav-links" aria-label="Menu chính">
+        <a href="/">Trang chủ</a>
+        <a href="#cach-lam">Cách bot làm</a>
+        <a href="#banggia">Bảng giá</a>
+        <a href="#hoidap">Hỏi đáp</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="login" href="https://zalo.chuxetai.com/cham-soc">Đăng nhập</a>
+        <a class="btn" href="https://zalo.chuxetai.com/dang-ky">Dùng thử 7 ngày</a>
+        <button class="burger" aria-label="Mở menu" onclick="document.getElementById('mMenu').classList.toggle('open')">☰</button>
+      </div>
+    </div>
+    <nav class="m-menu" id="mMenu" aria-label="Menu điện thoại">
+      <a href="/">Trang chủ</a>
+      <a href="#cach-lam">Cách bot làm</a>
+      <a href="#banggia">Bảng giá</a>
+      <a href="#hoidap">Hỏi đáp</a>
+      <a href="https://zalo.chuxetai.com/cham-soc">Đăng nhập</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- 8+2 BƯỚC 1 (Tiếp cận) + BƯỚC 2 mở đầu -->
+  <section class="hero" aria-labelledby="h1">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Bot chăm sóc khách cũ qua Zalo</span>
+        <h1 id="h1">Khách chở xong một chuyến rồi quên mất anh?</h1>
+        <p class="lead">Lần sau họ cần xe, họ gọi nhà xe khác. Không phải vì anh chạy dở. Chỉ vì lúc họ cần, cái tên hiện ra trong đầu họ không phải là anh.</p>
+        <p class="lead">Bot này thay anh nhắn cho khách cũ những tin có ích, đều đặn, đúng mực. Khách nhớ anh. Cần xe là nhắn anh.</p>
+        <div class="hero-cta">
+          <a class="btn-lg primary" href="https://zalo.chuxetai.com/dang-ky">Dùng thử 7 ngày miễn phí</a>
+          <a class="btn-lg ghost" href="https://zalo.me/0707707115">Nhắn Zalo hỏi thêm</a>
+        </div>
+        <p class="note">7 ngày đầu 0 đồng. Sau đó <b class="tnum">199.000 đ</b>/tháng. Không nhập thẻ.</p>
+      </div>
+      <!-- Minh hoạ: khung tin Zalo bot gửi khách cũ (nội dung lấy từ mẫu tin có sẵn trong bot) -->
+      <div class="phone" aria-label="Ví dụ tin bot gửi cho khách cũ">
+        <div class="ph-top"><span class="ph-av">HV</span><div><b>Vận tải Hùng Vương</b><small>Zalo</small></div></div>
+        <div class="ph-body">
+          <div class="ph-day">Ngày 2</div>
+          <div class="bub">Dạ anh/chị, em là Vận tải Hùng Vương. Mẹo nhỏ để đi hàng tỉnh đỡ tốn: báo lịch sớm, khai đúng loại hàng và trọng lượng, hàng ít thì đi ghép. Anh/chị cần báo giá cứ nhắn em hoặc gọi 0845 442 442 ạ.</div>
+          <div class="ph-day">Ngày 30</div>
+          <div class="bub me">Em ơi tuần sau chị có 3 tấn hàng đi Đà Nẵng, báo giá giúp chị.</div>
+          <div class="ph-cap">Khách nhắn lại thì anh trả lời như bình thường. Bot không trả lời thay anh.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8+2 BƯỚC 2: Khơi gợi nhu cầu, xoáy nỗi đau -->
+  <section id="noi-dau">
+    <div class="sec-h">
+      <h2>Khách cũ không mất đi đâu cả. Họ chỉ quên anh.</h2>
+      <p>Mấy chuyện này chắc anh gặp rồi.</p>
+    </div>
+    <div class="pains">
+      <div class="pain-c"><b>Tốn công kiếm, chạy được một chuyến là hết</b><p>Chạy quảng cáo, nhờ người giới thiệu, gọi điện báo giá mãi mới có khách. Chở xong, trả tiền, rồi im luôn. Công kiếm khách coi như bỏ.</p></div>
+      <div class="pain-c"><b>Ba tháng sau họ cần xe, lại lên mạng tìm</b><p>Số anh nằm đâu đó trong danh bạ, giữa hàng trăm số khác. Họ gõ "xe tải đi tỉnh" trên Google, gặp nhà xe khác, gọi luôn.</p></div>
+      <div class="pain-c"><b>Biết nên hỏi thăm, mà không có thời gian</b><p>Ngày nào cũng điều xe, nghe điện thoại, đòi nợ. Tối về mệt, đâu còn sức nhắn hỏi thăm từng khách cũ một.</p></div>
+      <div class="pain-c"><b>Nhắn tay thì quên, mà nhắn hoài lại ngại</b><p>Hôm nào nhớ thì nhắn vài người, rồi bỏ cả tháng. Nhắn lời mời thuê xe hoài thì sợ khách thấy phiền, chặn luôn.</p></div>
+    </div>
+    <p class="sum">Mỗi khách cũ quên anh là một khách anh phải bỏ tiền kiếm lại từ đầu. Trong khi giữ một khách cũ rẻ hơn nhiều so với kiếm một khách mới.</p>
+  </section>
+
+  <!-- 8+2 BƯỚC 3 (Giải pháp) + BƯỚC 6 (Khao khát) -->
+  <section id="cach-lam">
+    <div class="sec-h">
+      <h2>Bot nhắn thay anh, đều đặn, không làm phiền</h2>
+      <p>Mỗi tin là một điều có ích cho khách. Cuối tin là số hotline của anh.</p>
+    </div>
+    <div class="feats">
+      <div class="feat"><b>Gắn nhãn "Khách hàng" trong Zalo là xong</b><p>Anh không phải nhập danh sách. Khách nào anh gắn nhãn, bot đưa vào lịch chăm sóc. <span class="vi">Vì vậy anh chỉ mất vài giây cho mỗi khách.</span></p></div>
+      <div class="feat"><b>Luồng tin soạn sẵn, cách nhau nhiều ngày</b><p>Có sẵn các tin: lưu số nhà xe, cách đặt xe đi tỉnh tiết kiệm, lưu ý xe nội thành, chọn đúng loại xe, chốt giá tránh phát sinh, chuẩn bị hàng, hàng dễ vỡ, nên ghép hay bao xe. <span class="vi">Anh sửa lời theo giọng mình, thêm chủ đề như lịch cao điểm, giá dầu.</span></p></div>
+      <div class="feat"><b>Mỗi tin có nhiều cách viết</b><p>Bot đổi cách viết giữa các khách, gửi trong giờ hành chính, nghỉ vài phút giữa các tin. <span class="vi">Giúp tin đọc tự nhiên như người nhắn, không giống tin quảng cáo hàng loạt.</span></p></div>
+      <div class="feat"><b>Khách nhắn HUY là dừng ngay</b><p>Cuối tin có một câu nhỏ: không muốn nhận thì nhắn HỦY. Anh gỡ nhãn cũng dừng. <span class="vi">Điều này có nghĩa là không ai bị làm phiền quá mức.</span></p></div>
+      <div class="feat"><b>Chiến dịch gửi một lần cho cả danh sách</b><p>Có tin cần báo gấp, ví dụ mở tuyến mới hay lịch nghỉ Tết, anh soạn một lần, bot rải dần cho khách cũ.</p></div>
+      <div class="feat"><b>Trang quản lý trên điện thoại hay máy tính</b><p>Xem bot đã gửi cho ai, hôm nay gửi bao nhiêu tin, khách nào đã dừng. Đăng nhập Zalo bằng cách quét mã QR.</p></div>
+    </div>
+
+    <!-- Minh hoạ: dòng thời gian một khách -->
+    <div class="tl" aria-label="Lịch bot nhắn một khách cũ">
+      <div class="tl-i"><span class="tl-d">Ngày 0</span><p>Chào khách, nhắc lưu số nhà xe vào danh bạ.</p></div>
+      <div class="tl-i"><span class="tl-d">Ngày 2</span><p>Cách đặt xe đi tỉnh tiết kiệm.</p></div>
+      <div class="tl-i"><span class="tl-d">Ngày 7</span><p>Lưu ý khi chở hàng dễ vỡ.</p></div>
+      <div class="tl-i"><span class="tl-d">Ngày 10</span><p>Khi nào nên ghép hàng, khi nào nên bao xe.</p></div>
+      <div class="tl-i"><span class="tl-d">Sau đó</span><p>Nghỉ một thời gian rồi nhắc lại, không dồn dập.</p></div>
+    </div>
+
+    <div class="feel">
+      <h3>Hình dung ba tháng nữa</h3>
+      <p>Một khách cũ chở hàng với anh từ đầu năm, chuẩn bị đi một lô hàng ra Bắc. Họ mở Zalo, thấy tin anh gửi tuần trước về cách chốt giá cho khỏi phát sinh. Họ không lên Google. Họ nhắn thẳng anh: "Em ơi báo giá giúp chị".</p>
+      <p>Anh không gọi mời ai. Anh chỉ trả lời tin nhắn.</p>
+    </div>
+  </section>
+
+  <!-- 8+2 BƯỚC 5: Chứng minh -->
+  <section id="bang-chung">
+    <div class="sec-h">
+      <h2>Mình dùng cho chính nhà xe của mình trước</h2>
+    </div>
+    <div class="proof">
+      <p>Bot này do anh Mai Văn Nhận làm ra để chăm sóc khách cũ của <b>Vận Tải Hùng Vương</b> (CÔNG TY TNHH VẬN TẢI VÀ CHUYỂN NHÀ HÙNG VƯƠNG, MST <span class="tnum">0316324699</span>). Bot đang chạy cho Hùng Vương từ ngày 22/10/2026.</p>
+      <p>Những tin mẫu anh thấy ở trên là tin thật bot đang gửi cho khách của Hùng Vương. Anh dùng thử 7 ngày là thấy bot chạy trên chính Zalo của anh, không cần tin lời ai.</p>
+      <!-- CHỖ CHÈN: đánh giá thật của chủ xe đã dùng bot (tên, nhà xe, lời nhận xét, ảnh nếu có). Chưa có thì giữ nguyên, không bịa. -->
+      <!-- CHỖ CHÈN: số liệu kết quả thật của Hùng Vương sau 1-3 tháng (số khách cũ nhắn lại, số chuyến quay lại). -->
+    </div>
+  </section>
+
+  <!-- 8+2 BƯỚC 4: Xử lý từ chối (nói thật rủi ro) -->
+  <section id="lo-ngai">
+    <div class="sec-h">
+      <h2>Mấy điều anh sẽ lo, mình nói thật</h2>
+    </div>
+    <div class="objs">
+      <div class="obj"><b>"Gửi tin nhiều Zalo khoá nick thì sao?"</b><p>Đây là rủi ro có thật. Bot dùng nick Zalo cá nhân, mà Zalo có thể hạn chế nick nếu gửi quá nhiều. Vì vậy bot có trần số tin mỗi ngày: tuần đầu tối đa 10 tin, sau đó tăng dần. Bot chỉ gửi trong giờ hành chính và nghỉ giữa các tin. Mình khuyên anh dùng một nick phụ, hoặc giữ mức gửi thấp.</p></div>
+      <div class="obj"><b>"Khách thấy phiền, chặn mình luôn?"</b><p>Tin cách nhau nhiều ngày, nội dung là mẹo có ích chứ không phải lời mời thuê xe liên tục. Khách nhắn HỦY là bot dừng ngay. Mặc định bot không gọi tên khách, vì tên Zalo nhiều khi sai thứ tự, gọi sai còn tệ hơn không gọi.</p></div>
+      <div class="obj"><b>"Bot có trả lời bậy với khách không?"</b><p>Không. Bot không tự trả lời khách. Khách nhắn lại thì tin vào Zalo của anh như bình thường, anh tự trả lời.</p></div>
+      <div class="obj"><b>"Lỡ thêm cả trăm khách một lúc thì sao?"</b><p>Khi có nhiều khách mới cùng lúc, bot chờ anh duyệt rồi mới nhắn. Không có chuyện bấm nhầm rồi bot nhắn ồ ạt.</p></div>
+      <div class="obj"><b>"Tôi không rành máy móc"</b><p>Anh chỉ cần quét mã QR bằng Zalo trên điện thoại và gắn nhãn cho khách. Tin đã soạn sẵn. Kẹt chỗ nào nhắn Zalo <a href="https://zalo.me/0707707115" class="tnum">0707.707.115</a>, bên mình chỉ từng bước.</p></div>
+    </div>
+
+    <div class="steps">
+      <div class="st"><span>1</span><b>Đăng ký</b><p>Bấm dùng thử, đăng nhập bằng Google.</p></div>
+      <div class="st"><span>2</span><b>Quét mã QR</b><p>Mở Zalo trên điện thoại, quét mã để bot dùng nick của anh.</p></div>
+      <div class="st"><span>3</span><b>Điền hotline</b><p>Điền số điện thoại và tên nhà xe. Xem lại tin soạn sẵn.</p></div>
+      <div class="st"><span>4</span><b>Gắn nhãn khách</b><p>Gắn nhãn "Khách hàng" cho khách cũ trong Zalo. Bot bắt đầu chăm sóc.</p></div>
+    </div>
+  </section>
+
+  <!-- 8+2 BƯỚC 7 (Ưu đãi) + BƯỚC 8 (Chốt) -->
+  <section id="banggia">
+    <div class="sec-h">
+      <h2>Dùng thử 7 ngày, thấy được hãy trả tiền</h2>
+    </div>
+    <div class="price-box">
+      <div class="pb-l">
+        <span class="badge">Dùng thử 7 ngày miễn phí</span>
+        <div class="pb-price"><b class="tnum">199.000 đ</b><span>/tháng</span></div>
+        <p class="pb-sub">Rẻ hơn tiền dầu một chuyến chạy rỗng. Chỉ cần một khách cũ quay lại là đủ tiền cả năm.</p>
+        <ul>
+          <li>Bot chạy trên nick Zalo của anh</li>
+          <li>Luồng tin chăm sóc soạn sẵn, sửa được</li>
+          <li>Chiến dịch gửi cho cả danh sách khách cũ</li>
+          <li>Trang quản lý: thống kê, nhật ký gửi</li>
+          <li>Hỗ trợ qua Zalo 0707.707.115</li>
+        </ul>
+      </div>
+      <div class="pb-r">
+        <a class="btn-lg primary" href="https://zalo.chuxetai.com/dang-ky">Dùng thử 7 ngày miễn phí</a>
+        <a class="btn-lg line" href="https://zalo.me/0707707115">Nhắn Zalo hỏi trước</a>
+        <p class="note2">Không nhập thẻ, không tự trừ tiền. Hết 7 ngày, anh muốn dùng tiếp thì chuyển khoản, không thì thôi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8+2 BƯỚC 9: Sản phẩm liên quan -->
+  <section id="lien-quan">
+    <div class="sec-h">
+      <h2>Đi cùng bot chăm sóc khách</h2>
+      <p>Khách cũ quay lại rồi, mấy món này giúp anh làm tiếp.</p>
+    </div>
+    <div class="rel">
+      <a href="/quan-ly-xe"><b>Quản lý công nợ xe tải</b><span>Khách quay lại nhiều thì sổ nợ cũng nhiều. Ghi công nợ, lời lỗ từng chuyến trên điện thoại.</span></a>
+      <a href="https://zalo.chuxetai.com/dieu-xe"><b>AI điều xe 24/7</b><span>Khách nhắn đặt xe trong nhóm Zalo, AI tách thành lệnh điều xe cho anh duyệt.</span></a>
+      <a href="https://timhangxetai.com/nha-xe"><b>Tìm hàng xe tải</b><span>Xe về rỗng thì xem đơn chủ hàng hợp tuyến, nhận thêm chuyến.</span></a>
+    </div>
+  </section>
+
+  <!-- 8+2 BƯỚC 10: Hỏi đáp + quan hệ lâu dài -->
+  <section id="hoidap">
+    <div class="sec-h">
+      <h2>Câu hỏi thường gặp</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Bot gửi tin từ nick Zalo nào?</summary><p>Từ chính nick Zalo anh quét mã QR. Khách thấy tin từ nick đó, nhắn lại cũng vào nick đó. Nên dùng nick anh đang dùng để làm việc với khách, hoặc một nick phụ của nhà xe.</p></details>
+      <details><summary>Một ngày bot gửi bao nhiêu tin?</summary><p>Tuần đầu tối đa 10 tin mỗi ngày, sau đó tăng dần tới 20 rồi 30 tin. Bot chỉ gửi trong khoảng 8 giờ sáng tới 8 giờ tối.</p></details>
+      <details><summary>Tôi tự soạn tin được không?</summary><p>Được. Anh sửa từng tin trong luồng, thêm chủ đề mới, đổi số ngày giữa các tin, hoặc soạn chiến dịch riêng.</p></details>
+      <details><summary>Khách không muốn nhận nữa thì sao?</summary><p>Khách nhắn HỦY là bot dừng với khách đó. Anh gỡ nhãn "Khách hàng" trong Zalo cũng dừng.</p></details>
+      <details><summary>Có cần để máy tính mở suốt không?</summary><p>Không. Bot chạy trên máy chủ, anh xem trang quản lý bằng điện thoại hay máy tính đều được.</p></details>
+      <details><summary>Hết 7 ngày dùng thử thì sao?</summary><p>Anh muốn dùng tiếp thì đóng <span class="tnum">199.000 đ</span>/tháng. Không đóng thì bot ngừng gửi, không ai trừ tiền của anh.</p></details>
+      <details><summary>Bot có đọc tin nhắn riêng của tôi không?</summary><p>Bot chỉ đọc danh sách khách anh đã gắn nhãn và tin khách nhắn HỦY để dừng. Bot không tự trả lời và không gửi tin cho người anh không gắn nhãn.</p></details>
+    </div>
+    <p class="ket">Khách cũ là tài sản của nhà xe. Bot chỉ giúp anh giữ liên lạc, đều đặn, tử tế. Mình cũng chạy nhà xe, nên mình làm phần mềm để dùng lâu dài cùng anh, không phải bán một lần rồi thôi.</p>
+  </section>
+
+  <section class="final">
+    <h2>Để khách cũ nhớ anh mỗi lần cần xe</h2>
+    <p>Dùng thử 7 ngày miễn phí. Không nhập thẻ.</p>
+    <div class="hero-cta">
+      <a class="btn-lg primary" href="https://zalo.chuxetai.com/dang-ky">Dùng thử 7 ngày miễn phí</a>
+      <a class="btn-lg ghost" href="https://zalo.me/0707707115">Nhắn Zalo 0707.707.115</a>
+    </div>
+  </section>
+
+</div>
+
+<!-- Thanh nút cố định cuối màn hình điện thoại -->
+<div class="sticky-cta">
+  <a class="s-main" href="https://zalo.chuxetai.com/dang-ky">Dùng thử 7 ngày miễn phí</a>
+  <a class="s-call" href="https://zalo.me/0707707115">Zalo</a>
+</div>
+
+<!-- ============ CHÂN TRANG ============ -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-col">
+        <a class="brand-logo" href="/"><span class="brand-mark">X</span><span class="brand-name">chuxetai<span style="color:var(--brand)">.com</span></span></a>
+        <p class="f-desc">Bot chăm sóc khách cũ qua Zalo cho nhà xe tải. Khách nhớ anh mỗi lần cần xe.</p>
+      </div>
+      <div class="f-col">
+        <h4>Sản phẩm</h4>
+        <a href="#cach-lam">Cách bot làm</a>
+        <a href="#banggia">Bảng giá</a>
+        <a href="/quan-ly-xe">Quản lý công nợ</a>
+        <a href="#hoidap">Câu hỏi thường gặp</a>
+      </div>
+      <div class="f-col">
+        <h4>Tài khoản</h4>
+        <a href="https://zalo.chuxetai.com/dang-ky">Dùng thử 7 ngày</a>
+        <a href="https://zalo.chuxetai.com/cham-soc">Đăng nhập</a>
+      </div>
+      <div class="f-col">
+        <h4>Hỗ trợ</h4>
+        <a href="https://zalo.me/0707707115">Zalo: 0707.707.115</a>
+        <a href="tel:0707707115">Tổng đài: 0707.707.115</a>
+      </div>
+    </div>
+    <div class="f-legal">
+      <b>CÔNG TY TNHH VẬN TẢI VÀ CHUYỂN NHÀ HÙNG VƯƠNG</b><br>
+      Mã số thuế: <span class="tnum">0316324699</span> · Tổng đài: <span class="tnum">0707.707.115</span><br>
+      © 2026 <b>chuxetai.com</b> — Phần mềm cho nhà xe Việt Nam.
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('#mMenu a').forEach(function(a){
+    a.addEventListener('click', function(){ document.getElementById('mMenu').classList.remove('open'); });
+  });
+</script>
+</body>
+</html>

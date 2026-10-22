@@ -1,0 +1,12 @@
+# Chuyển hướng blog CŨ (/chuxetai-blog/...) sang blog MỚI (/blog/...) — giữ SEO
+/chuxetai-blog/ /blog 301
+/chuxetai-blog/index.html /blog 301
+/chuxetai-blog/5-sai-lam-ghi-so.html /blog/5-sai-lam-ghi-so/ 301
+/chuxetai-blog/cong-no-2-chieu-doi-tac.html /blog/cong-no-2-chieu-doi-tac/ 301
+/chuxetai-blog/doi-cong-no-kheo.html /blog/doi-cong-no-kheo/ 301
+/chuxetai-blog/hoa-don-vat-8-phan-tram.html /blog/hoa-don-vat-8-phan-tram/ 301
+/chuxetai-blog/luong-tai-xe-chuyen-hay-phan-tram.html /blog/luong-tai-xe-chuyen-hay-phan-tram/ 301
+/chuxetai-blog/mau-bang-ke-cong-no-van-tai.html /blog/mau-bang-ke-cong-no-van-tai/ 301
+/chuxetai-blog/phan-mem-quan-ly-nha-xe.html /blog/phan-mem-quan-ly-nha-xe/ 301
+/chuxetai-blog/tinh-lai-lo-chuyen-xe.html /blog/tinh-lai-lo-chuyen-xe/ 301
+/chuxetai-blog/* /blog 301
