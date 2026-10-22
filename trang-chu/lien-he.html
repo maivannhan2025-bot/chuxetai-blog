@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gửi yêu cầu hỗ trợ — chuxetai.com</title>
+<meta name="description" content="Gửi câu hỏi hoặc yêu cầu hỗ trợ cho các sản phẩm của chuxetai.com: tìm hàng xe tải, quản lý công nợ, AI điều xe, bot chăm sóc khách, web nhà xe, viết bài, khoá học.">
+<link rel="canonical" href="https://chuxetai.com/lien-he">
+<meta name="theme-color" content="#01093b">
+<link rel="icon" type="image/png" href="/icon-192.png">
+<style>
+  :root{--bg:#eef1f8;--panel:#fff;--line:#e4e8f2;--text:#0b1233;--muted:#68708e;--brand:#eb3309;--brand-dark:#b02607;--navy:#01093b;--good:#12833f;--good-tint:#e9f7ee;--bad:#b42318;--bad-tint:#fdeceb}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#070b1c;--panel:#0d1330;--line:#243056;--text:#eef1fb;--muted:#8b93b6;--brand:#ff5a2b;--brand-dark:#ff7d55;--navy:#020826;--good:#4cc47e;--good-tint:#123720;--bad:#f97066;--bad-tint:#2d1615}}
+  :root[data-theme="dark"]{color-scheme:dark;--bg:#070b1c;--panel:#0d1330;--line:#243056;--text:#eef1fb;--muted:#8b93b6;--brand:#ff5a2b;--brand-dark:#ff7d55;--navy:#020826;--good:#4cc47e;--good-tint:#123720;--bad:#f97066;--bad-tint:#2d1615}
+  *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  header{background:var(--navy);padding:14px max(16px,env(safe-area-inset-left,0px))}
+  header a{color:#fff;text-decoration:none;font-weight:800;font-size:18px}header a span{color:#ff5a2b}
+  main{max-width:640px;margin:0 auto;padding:28px max(16px,env(safe-area-inset-left,0px)) 48px}
+  h1{font-size:26px;margin:0 0 6px}p.phu{color:var(--muted);margin:0 0 20px}
+  form{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px}
+  label{font-weight:700;font-size:14px;display:block;margin-bottom:6px}
+  input,select,textarea{width:100%;font:inherit;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+  textarea{min-height:140px;resize:vertical}
+  .hai{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:520px){.hai{grid-template-columns:1fr}}
+  .goi{font-size:13px;color:var(--muted);margin-top:4px}
+  button{font:inherit;font-weight:800;background:var(--brand);color:#fff;border:0;border-radius:10px;padding:13px;cursor:pointer}button[disabled]{opacity:.6}
+  .bay{position:absolute;left:-5000px}
+  .kq{border-radius:10px;padding:12px 14px;font-weight:600}.kq.tot{background:var(--good-tint);color:var(--good)}.kq.loi{background:var(--bad-tint);color:var(--bad)}
+  a.ve{color:var(--brand-dark)}
+</style>
+</head>
+<body>
+<header><a href="/">chuxetai<span>.com</span></a></header>
+<main>
+  <h1>Gửi yêu cầu hỗ trợ</h1>
+  <p class="phu">Anh chị ghi câu hỏi hoặc việc cần giúp. Bên mình đọc và trả lời qua email hoặc số điện thoại anh chị để lại.</p>
+  <form id="f" novalidate>
+    <div><label for="sp">Sản phẩm cần hỗ trợ</label>
+      <select id="sp" name="san_pham">
+        <option value="tim-hang">Tìm hàng xe tải</option>
+        <option value="cong-no">Quản lý công nợ chuxetai</option>
+        <option value="ai-dieu-xe">AI điều xe 24/7</option>
+        <option value="bot-cham-soc">Bot chăm sóc khách cũ qua Zalo</option>
+        <option value="web-nha-xe">Web nhà xe</option>
+        <option value="viet-bai">Dịch vụ viết bài web</option>
+        <option value="khoa-hoc">Khoá học quảng cáo Facebook</option>
+        <option value="khac">Khác</option>
+      </select></div>
+    <div><label for="ten">Tên anh chị</label><input id="ten" name="ten" autocomplete="name" required></div>
+    <div class="hai">
+      <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"></div>
+      <div><label for="sdt">Số điện thoại</label><input id="sdt" name="sdt" type="tel" autocomplete="tel"></div>
+    </div>
+    <div class="goi">Để lại ít nhất email hoặc số điện thoại để bên mình trả lời.</div>
+    <div><label for="nd">Nội dung</label><textarea id="nd" name="noi_dung" required placeholder="Ví dụ: tôi muốn gia hạn gói Cá Nhân 3 tháng"></textarea></div>
+    <div class="bay" aria-hidden="true"><label for="web">Để trống ô này</label><input id="web" name="web" tabindex="-1" autocomplete="off"></div>
+    <button type="submit" id="gui">Gửi yêu cầu</button>
+    <div id="kq" role="status"></div>
+  </form>
+  <p class="phu" style="margin-top:16px"><a class="ve" href="/">Về trang chủ chuxetai.com</a></p>
+</main>
+<script>
+(function(){
+  var q=new URLSearchParams(location.search),sp=document.getElementById("sp");
+  if(q.get("sp")&&sp.querySelector('option[value="'+q.get("sp").replace(/[^a-z-]/g,"")+'"]'))sp.value=q.get("sp");
+  var f=document.getElementById("f"),kq=document.getElementById("kq"),nut=document.getElementById("gui");
+  f.addEventListener("submit",function(ev){
+    ev.preventDefault();nut.disabled=true;kq.className="";kq.textContent="Đang gửi...";
+    var d={san_pham:sp.value,ten:f.ten.value,email:f.email.value,sdt:f.sdt.value,noi_dung:f.noi_dung.value,web:f.web.value,trang:q.get("tu")||document.referrer||location.href};
+    fetch("https://quantri.chuxetai.com/api/lien-he",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(d)})
+      .then(function(r){return r.json().then(function(j){return{ok:r.ok,j:j}})})
+      .then(function(x){if(x.ok){kq.className="kq tot";kq.textContent="Đã gửi. Bên mình sẽ trả lời anh chị sớm.";f.reset();sp.value=d.san_pham}else{kq.className="kq loi";kq.textContent=x.j.loi||"Chưa gửi được, anh chị thử lại."}})
+      .catch(function(){kq.className="kq loi";kq.textContent="Chưa gửi được, anh chị kiểm tra mạng rồi thử lại."})
+      .then(function(){nut.disabled=false});
+  });
+})();
+</script>
+</body>
+</html>
