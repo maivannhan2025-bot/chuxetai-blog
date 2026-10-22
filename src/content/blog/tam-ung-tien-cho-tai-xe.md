@@ -156,4 +156,4 @@ Phần mềm không thay được thói quen ghi ngay. Nó chỉ làm cho việc
 
 Chưa muốn dùng gì cũng không sao. Chuyến tới, anh tách hai cột: tiền ứng cho chuyến và tiền ứng lương. Quyết toán ngay khi xe về. Tài xế xác nhận từng lần.
 
-Muốn máy làm phần cộng trừ, anh thử app quản xe chuxetai 30 ngày, hoặc gọi 0707.707.115 nếu cần hỏi thêm trước khi dùng. Nếu thấy bài có ích, gửi cho một ông chủ xe quen đang đau đầu vì sổ ứng. Chắc chắn có người đang cần.
+Muốn máy làm phần cộng trừ, anh thử app quản xe chuxetai 30 ngày, hoặc [gửi câu hỏi cho bên mình](/lien-he?sp=cong-no) nếu cần hỏi thêm trước khi dùng. Nếu thấy bài có ích, gửi cho một ông chủ xe quen đang đau đầu vì sổ ứng. Chắc chắn có người đang cần.
