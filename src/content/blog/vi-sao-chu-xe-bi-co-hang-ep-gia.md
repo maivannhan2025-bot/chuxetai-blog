@@ -3,7 +3,7 @@ title: "Vì sao chủ xe bị cò hàng ép giá khi xe đang rỗng"
 description: "Vì sao cò hàng ép giá đúng lúc xe rỗng, và 5 cách chủ xe giữ giá khi thương lượng chuyến hàng chiều về mà không phải cãi nhau hay mất khách."
 ngayDang: 2026-10-22
 thoiGianDoc: 9
-tuKhoa: "cò hàng ép giá"
+tuKhoa: "cò hàng ép giá, môi giới xe tải ép giá, cò hàng là gì"
 ---
 
 Xe giao hàng xong ở tỉnh xa, lúc xế chiều. Chủ xe gọi cho một môi giới quen xin chuyến hàng về. Giọng đầu dây rất thân thiện: "Có anh ơi, nhưng giá này thôi nhé." Con số đưa ra thấp hơn mức anh vẫn chạy. Anh hỏi lại, họ nói thêm: "Giờ này khó lắm, anh không nhận thì em cho xe khác."
@@ -80,4 +80,4 @@ Số giả định, để anh thấy cách tính. Chuyến về rỗng 400 km, c
 
 Giá bị ép đúng lúc xe rỗng vì thế thương lượng, không vì chuyến hàng rẻ. Anh đổi được thế đó bằng bốn việc: tìm hàng sớm, có nhiều nguồn, biết giá thấp nhất mình nhận, và giữ khách cũ. Bắt đầu từ việc nhỏ nhất: tuần này tính giá thấp nhất cho chuyến về của xe mình, ghi ra giấy.
 
-Muốn thêm một nguồn hàng không qua trung gian, anh có thể [xem thử timhangxetai](https://app.timhangxetai.com), hiện đang miễn phí.
+Muốn thêm một nguồn hàng không qua trung gian, anh đăng ký dùng thử timhangxetai miễn phí tại [app.timhangxetai.com](https://app.timhangxetai.com).
