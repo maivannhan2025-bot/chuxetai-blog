@@ -1,9 +1,9 @@
 ---
-title: "Chọn nguồn tìm hàng theo xe của anh: bảng chấm điểm tự làm"
-description: "Chọn nguồn tìm hàng nào cho xe của anh? Bảng chấm điểm tự làm trong 10 phút theo loại xe, tuyến, thời gian rảnh và số xe, kèm ví dụ ba kiểu chủ xe."
+title: "Chọn nguồn tìm hàng xe tải: bảng chấm điểm tự làm"
+description: "Chọn nguồn tìm hàng xe tải nào cho xe của anh? Bảng chấm điểm tự làm trong 10 phút theo loại xe, tuyến, thời gian rảnh và số xe, kèm ví dụ."
 ngayDang: 2026-10-22
 thoiGianDoc: 10
-tuKhoa: "chọn nguồn tìm hàng xe tải"
+tuKhoa: "chọn nguồn tìm hàng xe tải, bảng chấm điểm nguồn hàng"
 ---
 
 Đọc xong mấy bài về nhóm Zalo, môi giới, khách cũ, phần mềm tìm hàng, nhiều anh em hỏi tôi một câu rất thực tế: "Vậy xe của tôi nên theo cái nào?" Tôi không có đáp án chung, vì mỗi xe mỗi tuyến mỗi cách làm khác nhau. Nhưng có một cách để anh tự có đáp án riêng trong khoảng mười phút: lập một bảng chấm điểm.
@@ -108,3 +108,5 @@ Ghi lại số liệu mỗi nguồn: số chuyến nhận được, cước trun
 Chọn nguồn tìm hàng bằng bảng chấm điểm: liệt kê nguồn, chọn tiêu chí và trọng số, chấm điểm bằng số liệu thật, nhân và cộng. Chọn tổ hợp ba nguồn gồm nền, nhanh, dự phòng. Xem lại mỗi quý. Mười phút làm một lần sẽ giúp anh bớt chạy theo lời mách và có nguồn hàng hợp với chính xe của mình.
 
 Xem lại bức tranh chung ở bài trụ: [cách tìm hàng chiều về cho xe tải](/blog/cach-tim-hang-chieu-ve-cho-xe-tai/).
+
+Đăng ký dùng thử timhangxetai miễn phí tại [app.timhangxetai.com](https://app.timhangxetai.com) để có thêm một nguồn hàng chiều về.
