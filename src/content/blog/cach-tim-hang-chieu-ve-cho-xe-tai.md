@@ -78,6 +78,8 @@ Muốn họ nhớ, anh cần xuất hiện đều, và xuất hiện bằng th�
 - Muốn so các nguồn hàng chi tiết hơn: [các cách tìm hàng cho xe tải](/blog/cac-cach-tim-hang-cho-xe-tai/).
 - Xe còn trống chỗ, có người nhờ ghép hàng: [hàng ghép là gì, chủ xe có nên nhận](/blog/hang-ghep-la-gi-chu-xe-co-nen-nhan/).
 - Theo loại xe: [xe đầu kéo](/blog/tim-hang-chieu-ve-cho-xe-dau-keo/), [xe tải 1 đến 5 tấn](/blog/tim-hang-chieu-ve-cho-xe-tai-nho/), [xe tải 8 đến 15 tấn](/blog/tim-hang-chieu-ve-cho-xe-tai-vua/).
+- Đang cân nhắc giữa các cách: [nhóm Zalo hay phần mềm](/blog/tim-hang-qua-nhom-zalo-hay-phan-mem/), [tự tìm hay nhờ cò hàng](/blog/tu-tim-hang-hay-nho-co-hang/), [bao xe hay hàng ghép](/blog/bao-xe-hay-hang-ghep-chieu-ve/), [miễn phí hay trả phí](/blog/tim-hang-xe-tai-mien-phi-hay-tra-phi/), [có nên nhận hàng giá thấp](/blog/co-nen-nhan-hang-chieu-ve-gia-thap/).
+- Muốn chọn nguồn riêng cho xe của mình: [bảng chấm điểm tự làm](/blog/chon-nguon-tim-hang-theo-xe-cua-anh/).
 
 ## Câu hỏi hay gặp
 
