@@ -3,7 +3,8 @@ import { getCollection, render } from 'astro:content';
 import BaiViet from '../../layouts/BaiViet.astro';
 
 export async function getStaticPaths() {
-  const baiViet = await getCollection('blog');
+  // Hen gio (23/10/2026): bai co ngayDang o tuong lai chua tao trang; build moi gio se tu dang khi toi gio.
+  const baiViet = (await getCollection('blog')).filter((b) => b.data.ngayDang.valueOf() <= Date.now());
   return baiViet.map((bai) => ({
     params: { slug: bai.id },
     props: { bai },

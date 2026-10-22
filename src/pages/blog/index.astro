@@ -1,7 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 
-const baiViet = (await getCollection('blog')).sort(
+// Hen gio (23/10/2026): chi liet ke bai da toi ngay gio dang.
+const baiViet = (await getCollection('blog')).filter((b) => b.data.ngayDang.valueOf() <= Date.now()).sort(
   (a, b) => b.data.ngayDang.valueOf() - a.data.ngayDang.valueOf()
 );
 ---
