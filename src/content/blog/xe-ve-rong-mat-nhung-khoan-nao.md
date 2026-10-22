@@ -3,7 +3,7 @@ title: "Xe về rỗng mất những khoản nào? Cách tính cho chủ xe"
 description: "Xe về rỗng không chỉ mất tiền dầu. Liệt kê đủ các khoản chi phí khi xe chạy rỗng và cách tính từng khoản, để anh thấy chiều về rỗng thật sự tốn bao nhiêu."
 ngayDang: 2026-10-22
 thoiGianDoc: 9
-tuKhoa: "xe về rỗng"
+tuKhoa: "xe về rỗng, chi phí xe về rỗng, xe tải chạy rỗng"
 ---
 
 Chuyến đi có hàng, anh tính cước rất kỹ. Chuyến về rỗng thì nhiều anh em chỉ nghĩ: thôi, về là xong. Tiền dầu thì thấy ngay, còn lại bao nhiêu khoản khác thì ít ai cộng đủ. Rồi cuối tháng nhìn sổ, thấy doanh thu không ít mà tiền trong tay thì mỏng.
@@ -84,3 +84,5 @@ Nếu anh chưa có sổ, bắt đầu từ chuyến tới: ghi đủ các kho�
 Xe về rỗng không chỉ mất tiền dầu. Nó mất cả chuỗi chi phí: dầu, phí đường, công tài xế, ăn ở, hao mòn, và một phần chi phí cố định. Làm một bảng 15 phút cho xe của mình, anh sẽ biết chiều về rỗng thật sự tốn bao nhiêu. Có con số đó trong tay, anh sẽ biết khi nào nên nhận chuyến về giá thấp, khi nào nên chờ.
 
 Việc tiếp theo là tìm nguồn hàng chiều về đều đặn. Anh xem [cách tìm hàng chiều về cho xe tải](/blog/cach-tim-hang-chieu-ve-cho-xe-tai/) để chọn nguồn phù hợp.
+
+Đăng ký dùng thử timhangxetai miễn phí tại [app.timhangxetai.com](https://app.timhangxetai.com) để có thêm một nguồn hàng chiều về.
