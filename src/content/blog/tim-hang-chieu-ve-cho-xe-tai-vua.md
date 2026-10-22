@@ -1,9 +1,9 @@
 ---
-title: "Tìm hàng chiều về cho xe tải 8 đến 15 tấn"
-description: "Xe tải 8 đến 15 tấn chạy liên tỉnh Nam Bắc, chiều về hay rỗng. Cách tìm hàng chiều về cho xe tải vừa: nguồn hàng, hàng pallet, hàng bao và cách tính cước."
+title: "Tìm hàng xe tải 8 tấn đến 15 tấn cho chiều về"
+description: "Tìm hàng xe tải 8 tấn đến 15 tấn chạy liên tỉnh Nam Bắc để chiều về không rỗng: nguồn hàng, hàng pallet, hàng bao và cách tính cước."
 ngayDang: 2026-10-22
 thoiGianDoc: 10
-tuKhoa: "tìm hàng xe tải 8 tấn"
+tuKhoa: "tìm hàng xe tải 8 tấn, tìm hàng xe 10 tấn, hàng chiều về xe vừa"
 ---
 
 Xe tải tám đến mười lăm tấn là loại xe chạy liên tỉnh nhiều nhất. Đi Nam ra Trung, ra Bắc, lên Tây Nguyên, xuống miền Tây. Hàng của loại xe này đa dạng: nông sản đóng bao, vật liệu xây dựng, hàng tiêu dùng đóng pallet, hàng công nghiệp. Cước mỗi chuyến đủ lớn để chạy xa, nhưng chiều về rỗng cũng đủ lớn để mất nhiều.
@@ -101,3 +101,5 @@ Bốn câu này mất mười phút, nhưng giúp tôi vào tình huống chiề
 Xe tải tám đến mười lăm tấn chạy xa nên chiều về rỗng đắt. Các nguồn hợp: khách cũ có hàng đều, kho nhà máy nơi giao, đại lý, nhóm theo tuyến, hàng ghép khách lớn. Tính cước chiều về bằng con số, đặt mốc giờ và mức tối thiểu, và đừng để lộ xe đang rỗng gấp.
 
 Muốn xem bức tranh chung, đọc bài trụ: [cách tìm hàng chiều về cho xe tải](/blog/cach-tim-hang-chieu-ve-cho-xe-tai/).
+
+Đăng ký dùng thử timhangxetai miễn phí tại [app.timhangxetai.com](https://app.timhangxetai.com) để có thêm một nguồn hàng chiều về.
