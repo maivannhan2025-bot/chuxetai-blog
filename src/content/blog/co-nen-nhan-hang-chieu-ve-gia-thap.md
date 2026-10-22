@@ -3,7 +3,7 @@ title: "Có nên nhận hàng chiều về giá thấp? Cách tính còn lãi"
 description: "Có nên nhận hàng chiều về giá thấp hơn mức thường? Cách so với chi phí chạy rỗng, chi phí chờ, tác động tới giá về sau và khi nào nên từ chối."
 ngayDang: 2026-10-22
 thoiGianDoc: 10
-tuKhoa: "hàng chiều về giá thấp"
+tuKhoa: "hàng chiều về giá thấp, cước chiều về thấp có lãi không"
 ---
 
 Xe đang rỗng ở tỉnh xa, có người đưa một chuyến về. Giá thấp hơn mức anh vẫn chạy, thấp đến mức nhìn vào là thấy tiếc. Nhận thì thấy mình bị thiệt. Không nhận thì xe về rỗng, chi phí vẫn chạy.
@@ -93,3 +93,5 @@ Mỗi chuyến giá thấp anh nhận hay từ chối, ghi lại: tuyến, cư�
 Đừng hỏi "giá có thấp không", hãy hỏi "nhận thì tốt hơn hay tệ hơn so với không nhận". So sánh chạy rỗng với nhận chuyến giá thấp bằng con số, cộng các yếu tố ngoài con số như khách lâu dài, mặt bằng giá, rủi ro. Có mức sàn để quyết nhanh, thương lượng khi có thể, và ghi lại để học từ từng chuyến.
 
 Xem cả bức tranh ở bài trụ: [cách tìm hàng chiều về cho xe tải](/blog/cach-tim-hang-chieu-ve-cho-xe-tai/).
+
+Đăng ký dùng thử timhangxetai miễn phí tại [app.timhangxetai.com](https://app.timhangxetai.com) để có thêm một nguồn hàng chiều về.
