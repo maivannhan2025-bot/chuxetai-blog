@@ -1,9 +1,9 @@
 ---
 title: "Xe nằm bãi mất bao nhiêu mỗi ngày? Cách tự tính cho chủ xe"
-description: "Xe nằm bãi không chạy nhưng vẫn tốn tiền mỗi ngày. Cách tự tính chi phí cố định mỗi ngày của xe tải để biết nên nhận chuyến giá thấp hay chờ hàng tốt hơn."
+description: "Xe nằm bãi mất bao nhiêu mỗi ngày dù không chạy? Cách tự tính chi phí cố định của xe tải để biết nên nhận chuyến giá thấp hay chờ hàng tốt hơn."
 ngayDang: 2026-10-22
 thoiGianDoc: 9
-tuKhoa: "xe nằm bãi mất bao nhiêu"
+tuKhoa: "xe nằm bãi mất bao nhiêu, chi phí xe tải nằm bãi, tính chi phí cố định xe tải"
 ---
 
 Một ngày xe nằm bãi, doanh thu bằng không. Nhiều anh em nghĩ vậy là hết: không chạy thì không tốn dầu, không tốn gì. Thật ra khoản tốn nằm ở chỗ khác. Xe đứng im, nhưng một loạt chi phí vẫn chạy đều mỗi ngày, ngày nào xe nằm cũng cộng thêm một ngày.
@@ -104,3 +104,5 @@ Cả hai bài, cộng lại, trả lời câu hỏi lớn hơn: tìm hàng chi�
 Xe nằm bãi vẫn mất tiền, vì chi phí cố định không nghỉ. Làm một bảng trong 15 phút: liệt kê các khoản cố định, cộng cả tháng, chia cho số ngày chạy. Con số đó cho anh biết nằm một ngày mất bao nhiêu, nhận chuyến giá thấp có đáng không, và xe cần chạy tối thiểu bao nhiêu chuyến để không lỗ.
 
 Việc nên làm trong tuần này: tính cho một xe, ghi con số vào chỗ nhìn thấy mỗi sáng. Rồi nghĩ đến chuyện hàng chiều về, vì đó là cách giảm số ngày nằm nhanh nhất.
+
+Đăng ký dùng thử timhangxetai miễn phí tại [app.timhangxetai.com](https://app.timhangxetai.com) để có thêm một nguồn hàng chiều về.
