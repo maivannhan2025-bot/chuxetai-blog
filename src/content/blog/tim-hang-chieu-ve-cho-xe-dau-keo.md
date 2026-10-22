@@ -1,9 +1,9 @@
 ---
-title: "Tìm hàng chiều về cho xe đầu kéo"
-description: "Xe đầu kéo chiều về rỗng tốn rất nhiều. Cách tìm hàng chiều về cho xe đầu kéo: nguồn hàng, trả vỏ container, cách chọn tuyến và tính cước cho đỡ lỗ."
+title: "Tìm hàng xe đầu kéo chiều về: nguồn hàng và cách tính cước"
+description: "Tìm hàng xe đầu kéo cho chiều về để khỏi chạy rỗng tốn kém: nguồn hàng, trả vỏ container, cách chọn tuyến và cách tính cước cho đỡ lỗ."
 ngayDang: 2026-10-22
 thoiGianDoc: 10
-tuKhoa: "tìm hàng xe đầu kéo"
+tuKhoa: "tìm hàng xe đầu kéo, hàng chiều về đầu kéo, xe đầu kéo tìm hàng"
 ---
 
 Xe đầu kéo chạy rỗng đau hơn xe nhỏ nhiều. Máy lớn, dầu nhiều, công tài xế đường dài, phí cầu đường theo trục. Một chiều về rỗng cả trăm cây số là một khoản không nhỏ. Mà hàng của xe đầu kéo lại khác: hàng nặng, hàng container, đơn lớn, không phải gom lẻ như xe tải nhỏ.
@@ -32,7 +32,7 @@ Bài này viết riêng cho anh em chủ xe đầu kéo. Tôi nói cách tìm h�
 
 **5. Hàng rời, hàng nặng.** Thép, vật liệu xây dựng, nông sản đóng bao lớn, nếu rơ moóc của anh phù hợp.
 
-**6. Nhóm tin hàng và sàn tìm hàng.** Có nhiều tin hàng nặng, hàng đầu kéo. Nên theo dõi những nhóm dành riêng cho xe đầu kéo, vì nhóm chung lẫn nhiều tin hàng lẻ không hợp.
+**6. Nhóm tin hàng và sàn tìm hàng.** Có nhiều tin hàng nặng, hàng cho xe đầu kéo. Nên theo dõi những nhóm dành riêng cho xe đầu kéo, vì nhóm chung lẫn nhiều tin hàng lẻ không hợp.
 
 ## Làm gì trước khi xe lăn bánh
 
@@ -86,7 +86,7 @@ Công nợ với khách lớn và đối tác là chuyện nhiều anh em gặp,
 Nếu anh chạy đầu kéo và muốn bớt rỗng, thử lịch đơn giản này:
 
 - **Đầu tuần:** xem lịch các chuyến sắp chạy, ghi tuyến đi và dự kiến ngày về. Gửi cho đầu mối ở đại lý hoặc khách lớn: "Xe em chạy tuyến này, về ngày này, anh có hàng hợp thì báo em."
-- **Giữa tuần:** xem nhóm tin hàng đầu kéo, ghi lại các tin hợp tuyến, hỏi sớm điều kiện rơ moóc và vỏ container.
+- **Giữa tuần:** xem nhóm tin hàng cho xe đầu kéo, ghi lại các tin hợp tuyến, hỏi sớm điều kiện rơ moóc và vỏ container.
 - **Cuối tuần:** tổng kết chuyến nào chạy rỗng, chuyến nào có hàng, vì sao. Một tháng sau anh sẽ thấy tuyến nào hay rỗng, tuyến nào ổn, và biết nên đàm phán thêm với ai.
 
 Thói quen ghi chép nhỏ này giúp anh nhìn thấy quy luật của chính xe mình, thay vì chỉ cảm nhận chung chung.
@@ -96,3 +96,5 @@ Thói quen ghi chép nhỏ này giúp anh nhìn thấy quy luật của chính x
 Đầu kéo chạy rỗng tốn nhiều nên càng phải tìm hàng chiều về sớm. Các nguồn hợp: hàng xuất, trả vỏ có tính phí, hợp đồng hai chiều, đại lý giao nhận, hàng nặng. Tính cước chiều về bằng con số, không bằng cảm giác. Và đừng để lộ xe đang rỗng gấp.
 
 Muốn xem bức tranh chung cho mọi loại xe, đọc bài trụ: [cách tìm hàng chiều về cho xe tải](/blog/cach-tim-hang-chieu-ve-cho-xe-tai/).
+
+Đăng ký dùng thử timhangxetai miễn phí tại [app.timhangxetai.com](https://app.timhangxetai.com) để có thêm một nguồn hàng chiều về.
