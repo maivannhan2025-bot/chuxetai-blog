@@ -1,9 +1,9 @@
 ---
-title: "Tìm hàng chiều về cho xe tải 1 đến 5 tấn chạy tỉnh"
-description: "Xe tải 1 đến 5 tấn chạy tỉnh tìm hàng chiều về thế nào? Hàng lẻ, hàng ghép, khách quen: cách gom hàng để chiều về không rỗng và cách tính cước cho lãi."
+title: "Tìm hàng xe tải nhỏ 1 đến 5 tấn chạy tỉnh, chiều về"
+description: "Tìm hàng xe tải nhỏ 1 đến 5 tấn chạy tỉnh cho chiều về: hàng lẻ, hàng ghép, khách quen, cách gom hàng để xe không rỗng và cách tính cước cho lãi."
 ngayDang: 2026-10-22
 thoiGianDoc: 10
-tuKhoa: "tìm hàng xe tải nhỏ"
+tuKhoa: "tìm hàng xe tải nhỏ, xe tải 1 đến 5 tấn tìm hàng, hàng chiều về xe nhỏ"
 ---
 
 Xe tải nhỏ, từ một đến năm tấn, là loại xe đông nhất trong nghề. Chủ xe đa phần chạy một hai xe, tự lái hoặc thuê một tài xế, nhận hàng lẻ, hàng ghép, hàng cho chủ shop, đại lý, hộ gia đình. Lợi thế của xe nhỏ là linh hoạt: vào ngõ, vào kho nhỏ, nhận hàng ít. Nhưng chiều về cũng không dễ có hàng nếu anh không có cách.
@@ -91,3 +91,5 @@ Tin ngắn, rõ ràng, không làm phiền. Mỗi tuần gửi một đến hai 
 Xe tải một đến năm tấn dễ có hàng lẻ, hàng ghép, nhưng cước nhỏ và nhiều điểm giao. Nguồn tốt nhất là khách quen, rồi nhóm đúng tuyến, hàng ghép và điểm giao. Có lịch chạy cố định, mức cước tối thiểu, và biết giá thấp nhất mình nhận, chiều về của anh sẽ ít rỗng hơn.
 
 Đọc bài trụ của loạt này để xem cả bức tranh: [cách tìm hàng chiều về cho xe tải](/blog/cach-tim-hang-chieu-ve-cho-xe-tai/).
+
+Đăng ký dùng thử timhangxetai miễn phí tại [app.timhangxetai.com](https://app.timhangxetai.com) để có thêm một nguồn hàng chiều về.
