@@ -72,6 +72,13 @@ Tìm khách mới tốn công và tốn tiền. Khách cũ thì họ đã tin an
 
 Muốn họ nhớ, anh cần xuất hiện đều, và xuất hiện bằng thứ có ích: một mẹo đặt xe, một lưu ý khi gửi hàng đi tỉnh, một thông báo xe sắp chạy tuyến nào. Không cần dài. Mỗi tuần một tin, ai có hàng sẽ gọi đúng lúc.
 
+## Đọc tiếp theo việc anh đang cần
+
+- Xe vừa giao hàng xong, chưa có hàng về: [xe giao hàng xong ở tỉnh xa làm gì](/blog/xe-giao-hang-xong-o-tinh-xa-lam-gi/).
+- Muốn so các nguồn hàng chi tiết hơn: [các cách tìm hàng cho xe tải](/blog/cac-cach-tim-hang-cho-xe-tai/).
+- Xe còn trống chỗ, có người nhờ ghép hàng: [hàng ghép là gì, chủ xe có nên nhận](/blog/hang-ghep-la-gi-chu-xe-co-nen-nhan/).
+- Theo loại xe: [xe đầu kéo](/blog/tim-hang-chieu-ve-cho-xe-dau-keo/), [xe tải 1 đến 5 tấn](/blog/tim-hang-chieu-ve-cho-xe-tai-nho/), [xe tải 8 đến 15 tấn](/blog/tim-hang-chieu-ve-cho-xe-tai-vua/).
+
 ## Câu hỏi hay gặp
 
 **Chiều về giá thấp có nên nhận không?** Nhận nếu cước vẫn bù được chi phí biến đổi của chuyến về (dầu, phí đường, công tài xế) và xe không còn lựa chọn tốt hơn. Đừng nhận chỉ vì sợ rỗng. Các bài sau trong loạt này sẽ nói kỹ hơn về cách tính.
