@@ -147,7 +147,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:14px}
 (function(){
 'use strict';
 // ====== CẤU HÌNH: đổi sản phẩm, link, việc mẫu ở đây ======
-// Sản phẩm chưa có link: để link:'' và muc:'noibo' (hiện "Đang hoàn thiện"). Có link thì điền link và đổi muc:'san'.
+// Sản phẩm chưa bán: muc:'noibo' (hiện "Đang hoàn thiện"), link tạm về thẻ trên trang chủ (/#...). Có link thật thì điền link và đổi muc:'san'.
 var ZALO = '0707707115';
 
 var SAN_PHAM = {
@@ -156,8 +156,8 @@ var SAN_PHAM = {
   chamsoc: {ten:'Bot hỏi thăm khách cũ', mo:'Tự nhắn hỏi thăm khách cũ để họ nhớ gọi lại.', link:'/bot-cham-soc-khach', nut:'Xem', muc:'san'},
   timhang: {ten:'Tìm hàng xe tải', mo:'Xem đơn hàng gần tuyến anh chạy, bớt chạy xe rỗng.', link:'https://timhangxetai.com/nha-xe', nut:'Dùng thử 30 ngày', muc:'san'},
   web:     {ten:'Web nhà xe', mo:'Khách tìm trên Google là thấy nhà xe anh.', link:'https://web.chuxetai.com', nut:'Xem', muc:'san'},
-  hoadon:  {ten:'Xuất hoá đơn tự động', mo:'Chạy xong là tự lập hoá đơn, không chờ kế toán.', link:'', nut:'', muc:'noibo'},
-  video:   {ten:'Làm video tự động', mo:'Anh chỉ cần nói và quay. Máy tự cắt, ghép, chèn chữ.', link:'', nut:'', muc:'noibo'},
+  hoadon:  {ten:'Xuất hoá đơn tự động', mo:'Chạy xong là tự lập hoá đơn, không chờ kế toán.', link:'/#hoa-don-tu-dong', nut:'Xem', muc:'noibo'},
+  video:   {ten:'Làm video tự động', mo:'Anh chỉ cần nói và quay. Máy tự cắt, ghép, chèn chữ.', link:'/#video-tu-dong', nut:'Xem', muc:'noibo'},
   khoafb:  {ten:'Khoá học quảng cáo Facebook', mo:'Học tự chạy quảng cáo để khách tự gọi.', link:'https://maivannhan.com', nut:'Xem', muc:'san'}
 };
 var MUC_CHU = {san:'Được. Có sẵn', noibo:'Được. Đang hoàn thiện', rieng:'Chưa có sẵn'};
