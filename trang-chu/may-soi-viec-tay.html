@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Máy soi việc tay nhà xe - chuxetai.com</title>
+<meta name="description" content="Chọn việc nhà xe đang làm tay. Máy tính ra số giờ, số tiền mất, và chỉ việc nào máy làm thay được.">
+<link rel="canonical" href="https://chuxetai.com/may-soi-viec-tay">
+<link rel="icon" href="/icon-192.png">
+<style>
+:root{--bg:#eef1f8;--panel:#fff;--line:#e4e8f2;--text:#0b1233;--soft:#39416b;--muted:#68708e;--brand:#eb3309;--brand-dark:#b02607;--tint:#fff1ec;--navy:#01093b;--good:#12833f;--good-tint:#e9f7ee;--warn:#9a6700;--warn-tint:#fff6dd}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--brand-dark)}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header{background:var(--navy);color:#fff}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+header a{color:#fff;text-decoration:none;font-weight:700}
+.hero{padding:32px 0 4px}
+.nhan{display:inline-block;background:var(--tint);color:var(--brand-dark);font-weight:700;font-size:14px;padding:4px 10px;border-radius:99px}
+h1{font-size:30px;line-height:1.25;margin:12px 0}
+h2{font-size:22px;margin:0 0 6px}
+.the{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;margin:18px 0}
+.mo{color:var(--soft);margin:0 0 12px}
+ul.dau{margin:0 0 12px;padding-left:20px;font-weight:600}
+.dau-viec{color:var(--brand-dark);font-weight:600;margin:4px 0}
+.canh{background:var(--navy);color:#fff;border-radius:12px;padding:14px;margin:10px 0;font-size:17px}
+.canh b{color:#ffb39e}
+button{font:inherit;cursor:pointer}
+.btn{background:var(--brand);color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:700}
+.btn:hover{background:var(--brand-dark)}
+.btn-phu{background:#fff;color:var(--brand-dark);border:1px solid var(--brand);border-radius:10px;padding:9px 14px;font-weight:600}
+.khung-bang{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table.bv{width:100%;border-collapse:collapse;font-size:15px}
+.bv th{background:var(--navy);color:#fff;font-size:13px;font-weight:600;line-height:1.25;padding:8px 4px;text-align:center}
+.bv th.c-viec{text-align:left;padding-left:10px}
+.bv td{border-top:1px solid var(--line);border-left:1px solid var(--line);padding:6px 4px;text-align:center;vertical-align:middle}
+.bv td:first-child{border-left:0;text-align:left;padding-left:8px}
+.bv tr.tat td:not(:first-child){opacity:.35}
+.bv tr.bat{background:var(--good-tint)}
+.bv .ten{display:flex;gap:8px;align-items:flex-start;font-weight:600;line-height:1.3}
+.bv .ten input[type=text]{font-weight:600;padding:4px 6px}
+.bv .dau-viec{font-size:13px;font-weight:600;color:var(--brand-dark);margin:3px 0 0 30px}
+.bv input[type=checkbox]{width:22px;height:22px;margin:0;accent-color:var(--good);flex:0 0 22px}
+.bv input.so-o{width:46px;text-align:center;padding:5px 2px}
+.bv select{width:auto;padding:5px 2px}
+label.o{display:block;font-size:14px;color:var(--soft)}
+input,select,textarea{font:inherit;width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;color:var(--text)}
+textarea{min-height:56px}
+.ngay{display:flex;gap:8px;margin-top:6px}
+.ngay button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 16px}
+.ngay button.chon{background:var(--navy);color:#fff;border-color:var(--navy)}
+.luoi2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.luoi2>div{min-width:0}
+.cau{margin-top:10px}
+.so{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:12px 0}
+.so div{background:var(--tint);border-radius:12px;padding:12px}
+.so b{display:block;font-size:22px;color:var(--brand-dark)}
+.so span{font-size:14px;color:var(--soft)}
+.kq{border:1px solid var(--line);border-radius:12px;padding:12px;margin:8px 0}
+.kq.so1{border:2px solid var(--brand)}
+.kq h3{margin:0 0 4px;font-size:17px}
+.muc{display:inline-block;font-size:13px;font-weight:700;border-radius:6px;padding:2px 8px;margin:4px 0}
+.muc.san{background:var(--good-tint);color:var(--good)}
+.muc.noibo{background:var(--warn-tint);color:var(--warn)}
+.muc.rieng{background:#eef1f8;color:var(--soft)}
+.ly{font-size:14px;color:var(--muted)}
+.sp{margin-top:6px;font-size:15px}
+.an{display:none}
+.tieu{font-size:18px;margin:18px 0 8px}
+.o-pt{border-radius:12px;padding:14px;margin:12px 0}
+.o-pt.nhat{border:2px solid var(--brand);background:#fff}
+.o-pt.ket{background:var(--good-tint);border:2px solid var(--good)}
+.o-pt h3{margin:0 0 6px;font-size:18px}
+.o-pt .lon{font-size:24px;font-weight:800;color:var(--good)}
+.o-pt.nhat .lon{color:var(--brand-dark)}
+.o-pt ul{margin:6px 0 0;padding-left:20px}
+.pt td{text-align:left;font-size:14px;padding:8px}
+.pt td:nth-child(2){text-align:center;font-weight:700;white-space:nowrap}
+.pt .dau-viec{margin-left:0}
+.nut-cuoi{display:block;text-align:center;text-decoration:none;font-size:18px;margin-top:14px}
+pre{white-space:pre-wrap;background:#0b1233;color:#f3f5ff;border-radius:12px;padding:16px;font:14px/1.6 ui-monospace,Menlo,Consolas,monospace}
+.bao{color:var(--brand-dark);font-size:14px;min-height:20px}
+.hp{position:absolute;left:-9999px}
+footer{padding:28px 0 40px;color:var(--muted);font-size:14px}
+@media (max-width:640px){h1{font-size:25px}.bv{font-size:14px}.bv .dau-viec{margin-left:0}.luoi2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="/">chuxetai.com</a><a href="/quan-ly-xe">Phần mềm nhà xe</a></div></header>
+
+<main class="wrap">
+<section class="hero">
+  <span class="nhan">Máy soi việc tay, miễn phí</span>
+  <h1>Khách nhắn lúc 10 giờ đêm. Không ai trả lời. Sáng ra khách đã đi xe khác.</h1>
+  <ul class="dau">
+    <li>Cả ngày ôm điện thoại trả lời khách, gọi tài xế.</li>
+    <li>Tối về còn ngồi ghi sổ, cộng nợ.</li>
+    <li>Nhân viên nghỉ là việc đứng. Anh nghỉ là mất khách.</li>
+  </ul>
+  <p class="mo">Anh không lười. Anh đang làm tay những việc máy làm được. Chọn việc anh đang làm, máy đếm cho anh thấy mỗi năm mất bao nhiêu giờ, bao nhiêu tiền.</p>
+</section>
+
+<section class="the" id="b1">
+  <h2>1. Đánh dấu việc anh đang làm tay</h2>
+  <p class="mo">Số đã điền sẵn, anh sửa cho gần đúng. Ba cột cuối: đánh dấu là Có.</p>
+  <div class="khung-bang"><table class="bv">
+    <thead><tr><th class="c-viec">Việc</th><th>Mấy phút<br>1 lần</th><th>Mấy<br>lần</th><th>Mỗi</th><th>Phải<br>tự làm</th><th>Tốn<br>tiền</th><th>Đêm<br>bị sót</th></tr></thead>
+    <tbody id="bang"></tbody>
+  </table></div>
+  <button class="btn-phu" id="them-viec" style="margin-top:10px">+ Thêm việc khác</button>
+  <p style="margin:18px 0 0">Một tuần làm mấy ngày?</p>
+  <div class="ngay" id="ngay"><button data-n="5">5</button><button data-n="6">6</button><button data-n="7">7</button></div>
+</section>
+
+<section class="the" id="b2">
+  <h2>2. Anh đang tốn bao nhiêu tiền?</h2>
+  <p class="mo">Không biết thì bỏ trống.</p>
+  <div class="luoi2">
+    <div><label class="o">Tiền phần mềm mỗi tháng (cộng hết lại)</label><input id="pm-thang" inputmode="numeric" placeholder="Ví dụ: 500.000"></div>
+    <div><label class="o">1 giờ làm việc đáng bao nhiêu tiền?</label><input id="gia-gio" inputmode="numeric" placeholder="Ví dụ: 50.000"></div>
+    <div><label class="o">Mỗi tuần mất mấy khách vì trả lời chậm?</label><input id="mat-khach" inputmode="decimal" placeholder="Ví dụ: 2"></div>
+    <div><label class="o">Mỗi chuyến lãi bao nhiêu?</label><input id="lai-chuyen" inputmode="numeric" placeholder="Ví dụ: 800.000"></div>
+  </div>
+  <p class="bao" id="bao-b2"></p>
+  <button class="btn" id="xem-kq">Xem kết quả</button>
+</section>
+
+<section class="the an" id="b3">
+  <h2>3. Phần mềm giúp được anh những gì?</h2>
+  <div class="canh" id="canh"></div>
+  <div class="so" id="so"></div>
+  <div class="o-pt nhat" id="nhat"></div>
+  <h3 class="tieu">Phân tích từng việc</h3>
+  <div class="khung-bang"><table class="bv pt">
+    <thead><tr><th class="c-viec">Việc</th><th>Giờ<br>mỗi năm</th><th>Phần mềm<br>làm thay được?</th><th>Kết quả đem lại</th></tr></thead>
+    <tbody id="pt"></tbody>
+  </table></div>
+  <div class="o-pt ket" id="ket"></div>
+  <a class="btn nut-cuoi" id="xem-pm" href="/quan-ly-xe">Xem phần mềm</a>
+</section>
+</main>
+
+<footer><div class="wrap">chuxetai.com · Zalo 0707.707.115 · <a href="/">Trang chủ</a> · <a href="/quan-ly-xe">Phần mềm nhà xe</a></div></footer>
+
+<script>
+(function(){
+'use strict';
+// ====== CẤU HÌNH: đổi sản phẩm, link, việc mẫu ở đây ======
+// Sản phẩm chưa có link: để link:'' và muc:'noibo' (hiện "Đang hoàn thiện"). Có link thì điền link và đổi muc:'san'.
+var ZALO = '0707707115';
+
+var SAN_PHAM = {
+  bot:     {ten:'Bot Zalo Điều Xe', mo:'Trả lời khách cả ngày lẫn đêm, hỏi đủ thông tin, tự lên lệnh. Anh chỉ bấm duyệt.', link:'https://chuxetai.com/bot-van-tai/?k=web', nut:'Xem', muc:'san'},
+  congno:  {ten:'Phần mềm công nợ chuxetai', mo:'Chạy xong là tự vào sổ. Tự cộng nợ, tự tính lương tài xế.', link:'/quan-ly-xe', nut:'Dùng thử miễn phí', muc:'san'},
+  chamsoc: {ten:'Bot hỏi thăm khách cũ', mo:'Tự nhắn hỏi thăm khách cũ để họ nhớ gọi lại.', link:'/bot-cham-soc-khach', nut:'Xem', muc:'san'},
+  timhang: {ten:'Tìm hàng xe tải', mo:'Xem đơn hàng gần tuyến anh chạy, bớt chạy xe rỗng.', link:'https://timhangxetai.com/nha-xe', nut:'Dùng thử 30 ngày', muc:'san'},
+  web:     {ten:'Web nhà xe', mo:'Khách tìm trên Google là thấy nhà xe anh.', link:'https://web.chuxetai.com', nut:'Xem', muc:'san'},
+  hoadon:  {ten:'Xuất hoá đơn tự động', mo:'Chạy xong là tự lập hoá đơn, không chờ kế toán.', link:'', nut:'', muc:'noibo'},
+  video:   {ten:'Làm video tự động', mo:'Anh chỉ cần nói và quay. Máy tự cắt, ghép, chèn chữ.', link:'', nut:'', muc:'noibo'},
+  khoafb:  {ten:'Khoá học quảng cáo Facebook', mo:'Học tự chạy quảng cáo để khách tự gọi.', link:'https://maivannhan.com', nut:'Xem', muc:'san'}
+};
+var MUC_CHU = {san:'Được. Có sẵn', noibo:'Được. Đang hoàn thiện', rieng:'Chưa có sẵn'};
+
+// Việc mẫu. q = 5 câu trả lời điền sẵn ở bước 4.
+var VIEC_MAU = [
+  {k:'tuvan', loi:'Khách nhắn là có trả lời ngay. Không mất khách vì chậm.', dau:'Khách hỏi 3 nhà xe cùng lúc. Ai trả lời trước thì được chuyến.', ten:'Trả lời khách hỏi giá', cc:'Zalo, Facebook', phut:10, lan:15, dv:'ngay', minh:false, tien:true, ngoai:true, sp:['bot'],
+   q:['người trực tin nhắn','khách nhắn nhiều, trả lời không kịp, khách đi xe khác','tin khách nhắn','câu trả lời và đủ thông tin chuyến: đi đâu, chở gì, ngày giờ, số điện thoại','báo giá và chốt chuyến nhanh']},
+  {k:'ngoaigio', loi:'Ban đêm, ngày nghỉ vẫn có máy trả lời và ghi lại chuyến.', dau:'Khách nhắn ban đêm không ai trả lời. Sáng ra khách đã đi xe khác.', ten:'Trả lời khách ban đêm', cc:'điện thoại', phut:10, lan:4, dv:'ngay', minh:false, tien:false, ngoai:true, sp:['bot'],
+   q:['khách nhắn ban đêm, ngày nghỉ','không ai trả lời, sáng ra khách đã đi xe khác','tin khách nhắn ban đêm','câu trả lời ngay và thông tin chuyến','không mất khách lúc không có người']},
+  {k:'baogia', loi:'Báo giá nhanh. Ai báo cũng cùng một giá.', dau:'Báo chậm là mất khách. Báo sai là mất lãi.', ten:'Báo giá', cc:'Zalo, Excel', phut:10, lan:6, dv:'ngay', minh:true, tien:false, ngoai:true, sp:['bot','congno'],
+   q:['người báo giá','phải tự tính, mỗi người báo một giá','đi đâu, chở gì, xe gì','giá gửi khách qua Zalo','báo nhanh, đúng giá']},
+  {k:'taolenh', loi:'Tin khách tự thành lệnh. Không gõ lại, không sai địa chỉ.', dau:'Gõ lại tin khách, sai một số nhà là xe chạy nhầm chỗ.', ten:'Viết lệnh chở hàng', cc:'Zalo', phut:5, lan:10, dv:'ngay', minh:false, tien:true, ngoai:true, sp:['bot','congno'],
+   q:['người điều xe','đọc tin khách rồi gõ lại, hay sai giờ, sai địa chỉ','tin khách đặt xe','lệnh chở hàng đủ thông tin và xe gợi ý','tài xế nhận lệnh nhanh, không sót tin']},
+  {k:'dieuxe', loi:'Tài xế nhận lệnh trên điện thoại. Anh biết ngay chuyến nào có xe.', dau:'Gọi từng tài xế, tài xế hỏi lại. Một chuyến mất cả chục cuộc gọi.', ten:'Báo tài xế đi chuyến', cc:'Zalo, gọi điện', phut:5, lan:10, dv:'ngay', minh:false, tien:true, ngoai:true, sp:['bot','congno'],
+   q:['người điều xe','phải nhắn, gọi từng tài xế','lệnh chở hàng','tin gửi tài xế, tài xế bấm nhận','biết chuyến nào có xe rồi']},
+  {k:'ghiso', loi:'Chạy xong là vào sổ. Nợ tự cộng, không sót chuyến.', dau:'Sót một chuyến là mất trắng tiền chuyến đó. Không ai biết.', ten:'Ghi sổ, ghi nợ', cc:'Excel, sổ tay', phut:5, lan:10, dv:'ngay', minh:false, tien:true, ngoai:false, sp:['congno'],
+   q:['kế toán','gõ lại từng chuyến, hay sót, lệch nợ','chuyến chạy xong, tiền khách trả','sổ chuyến và nợ từng khách','đòi nợ đúng, không sót tiền']},
+  {k:'luong', loi:'Lương tài xế tự tính. Tài xế tự xem, hết cãi nhau.', dau:'Cuối tháng cộng tay. Sai một dòng là cãi nhau với tài xế.', ten:'Tính lương tài xế', cc:'Excel', phut:180, lan:1, dv:'thang', minh:false, tien:true, ngoai:false, sp:['congno'],
+   q:['kế toán','cuối tháng cộng tay từng chuyến, hay cãi nhau','chuyến tài xế chạy, tiền tài xế đã thu, đã ứng','bảng lương từng tài xế','trả lương đúng']},
+  {k:'hoadon', loi:'Khách có hoá đơn ngay, không chờ kế toán.', dau:'Khách cần hoá đơn gấp. Kế toán đã về. Khách bực, lần sau gọi xe khác.', ten:'Xuất hoá đơn', cc:'phần mềm hoá đơn', phut:10, lan:3, dv:'ngay', minh:false, tien:true, ngoai:true, sp:['hoadon','congno'],
+   q:['kế toán','khách cần gấp mà kế toán đã nghỉ, gõ lại dễ sai','chuyến chạy xong, thông tin của khách','hoá đơn đúng tiền gửi khách','khách có hoá đơn ngay']},
+  {k:'video', loi:'Anh chỉ nói và quay. Video tự làm xong để đăng.', dau:'Bận chạy xe là bỏ đăng. Ngừng đăng là khách quên anh.', ten:'Làm video đăng Facebook, TikTok', cc:'điện thoại, CapCut', phut:90, lan:3, dv:'tuan', minh:true, tien:false, ngoai:false, sp:['video','khoafb'],
+   q:['chủ nhà xe','cắt ghép mất nhiều giờ, bận là bỏ','lời nói và cảnh quay xe','video đã làm xong để đăng','đều đặn có khách mới']},
+  {k:'chamsoc', loi:'Khách cũ được hỏi thăm đều, nhớ gọi lại anh.', dau:'Khách cũ không ghét anh. Họ chỉ quên anh.', ten:'Hỏi thăm khách cũ', cc:'Zalo', phut:5, lan:5, dv:'ngay', minh:false, tien:false, ngoai:false, sp:['chamsoc'],
+   q:['chủ nhà xe','bận là quên, khách cũ đi xe khác','danh sách khách cũ','tin hỏi thăm gửi đều','khách cũ gọi lại']},
+  {k:'timhang', loi:'Có hàng chiều về. Bớt chạy rỗng.', dau:'Chiều về chạy rỗng là đốt tiền dầu mà không có đồng nào.', ten:'Tìm hàng chiều về', cc:'nhóm Zalo, gọi điện', phut:30, lan:1, dv:'ngay', minh:true, tien:false, ngoai:false, sp:['timhang'],
+   q:['chủ nhà xe','gọi khắp nơi mới có hàng, nhiều chuyến vẫn chạy rỗng','đường về, ngày về, xe gì','đơn hàng hợp đường','bớt chạy rỗng']},
+  {k:'timkhach', loi:'Khách tự tìm thấy anh, không phải đăng mỗi ngày.', dau:'Ngày nào không đăng, ngày đó không có khách mới.', ten:'Đăng bài tìm khách', cc:'Facebook, nhóm Zalo', phut:30, lan:1, dv:'ngay', minh:true, tien:false, ngoai:false, sp:['web','khoafb'],
+   q:['chủ nhà xe','ngày nào cũng phải đăng, ngừng là hết khách','đường chạy, xe gì, giá','bài đăng và web khách tìm thấy','khách tự gọi tới']}
+];
+var KHONG_LAM = ['Đăng nhập nhiều người','Phần mềm cài điện thoại','Nối với phần mềm khác','Báo cáo, biểu đồ','Tự chuyển tiền'];
+
+// ====== LÕI TÍNH ======
+var DV = {ngay:'ngày', tuan:'tuần', thang:'tháng'};
+function so(v){var n=Number(String(v==null?'':v).trim().replace(',','.'));return isFinite(n)&&n>0?n:0;}
+function soTien(v){var n=Number(String(v==null?'':v).replace(/[.\s,đ]/gi,''));return isFinite(n)&&n>0?n:0;}
+function ds(n){return String(Math.round(Number(n)||0)).replace(/\B(?=(\d{3})+(?!\d))/g,'.');}
+function chu(v,d){return String(v==null?'':v).trim().replace(/\s+/g,' ').slice(0,d||300);}
+function thoat(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function lanNam(v,ngay){return v.dv==='tuan'?v.lan*52:v.dv==='thang'?v.lan*12:v.lan*ngay*52;}
+function tinh(){
+  var viec=st.viec.map(function(v){
+    var x={chon:!!v.chon,id:v.id,k:v.k,ten:chu(v.ten,80),cc:chu(v.cc,80),phut:so(v.phut),lan:so(v.lan),dv:DV[v.dv]?v.dv:'ngay',minh:!!v.minh,tien:!!v.tien,ngoai:!!v.ngoai};
+    x.gioNam=x.phut*lanNam(x,st.ngay)/60;
+    x.diem=x.gioNam*(x.minh?1:1.5)*(x.tien?1.25:1)*(x.ngoai?1.25:1);
+    return x;
+  }).filter(function(x){return x.chon&&x.ten&&x.gioNam>0;});
+  viec.sort(function(a,b){return b.diem-a.diem||b.gioNam-a.gioNam;});
+  var tongGio=viec.reduce(function(t,v){return t+v.gioNam;},0);
+  var giaGio=soTien(el('gia-gio').value), mat=so(el('mat-khach').value), lai=soTien(el('lai-chuyen').value);
+  return {viec:viec,tongGio:tongGio,pmNam:soTien(el('pm-thang').value)*12,tienCong:giaGio*tongGio,matNam:mat*52*lai};
+}
+function mau(k){for(var i=0;i<VIEC_MAU.length;i++)if(VIEC_MAU[i].k===k)return VIEC_MAU[i];return null;}
+function mucViec(v){var m=mau(v.k);if(!m)return 'rieng';return SAN_PHAM[m.sp[0]].muc;}
+
+// ====== GIAO DIỆN ======
+var LUU='may-soi-nha-xe-v3', dem=0, O_TIEN=['pm-thang','gia-gio','mat-khach','lai-chuyen'];
+var st={ngay:6,viec:VIEC_MAU.map(function(m,i){return {id:i+1,k:m.k,ten:m.ten,cc:m.cc,phut:m.phut,lan:m.lan,dv:m.dv,minh:m.minh,tien:m.tien,ngoai:m.ngoai,chon:false};})};
+dem=st.viec.length;
+function el(id){return document.getElementById(id);}
+function luu(){try{var d={st:st};O_TIEN.forEach(function(id){d[id]=el(id).value;});localStorage.setItem(LUU,JSON.stringify(d));}catch(e){}}
+function nap(){try{var d=JSON.parse(localStorage.getItem(LUU)||'null');if(d&&d.st&&d.st.viec){st=d.st;O_TIEN.forEach(function(id){el(id).value=d[id]||'';});st.viec.forEach(function(v){dem=Math.max(dem,v.id||0);});}}catch(e){}}
+function hop(f,v){return '<td><input type="checkbox" data-f="'+f+'"'+(v?' checked':'')+' aria-label="'+f+'"></td>';}
+function veBang(){
+  el('bang').innerHTML=st.viec.map(function(v){
+    var m=mau(v.k);
+    var ten=m?'<span>'+thoat(v.ten)+'</span>':'<input type="text" data-f="ten" maxlength="80" placeholder="Việc gì?" value="'+thoat(v.ten)+'">';
+    return '<tr data-id="'+v.id+'" class="'+(v.chon?'bat':'tat')+'"><td><label class="ten"><input type="checkbox" data-f="chon"'+(v.chon?' checked':'')+'>'+ten+'</label>'+
+      (m&&v.chon?'<div class="dau-viec">'+thoat(m.dau)+'</div>':'')+'</td>'+
+      '<td><input class="so-o" data-f="phut" inputmode="decimal" value="'+thoat(v.phut)+'"></td>'+
+      '<td><input class="so-o" data-f="lan" inputmode="decimal" value="'+thoat(v.lan)+'"></td>'+
+      '<td><select data-f="dv">'+['ngay','tuan','thang'].map(function(d){return '<option value="'+d+'"'+(v.dv===d?' selected':'')+'>'+DV[d]+'</option>';}).join('')+'</select></td>'+
+      hop('minh',v.minh)+hop('tien',v.tien)+hop('ngoai',v.ngoai)+'</tr>';
+  }).join('');
+}
+function veNgay(){[].forEach.call(el('ngay').children,function(b){b.className=Number(b.dataset.n)===st.ngay?'chon':'';});}
+function sua(e){
+  var f=e.target.dataset.f,tr=e.target.closest('tr[data-id]');if(!f||!tr)return;
+  var v=st.viec.filter(function(x){return x.id===Number(tr.dataset.id);})[0];if(!v)return;
+  v[f]=e.target.type==='checkbox'?e.target.checked:e.target.value;
+  var doi=false;
+  if(f!=='chon'&&!v.chon){v.chon=true;doi=true;}
+  if(f==='chon'||doi){var go=e.target.tagName==='INPUT'&&e.target.type!=='checkbox',vt=go?e.target.selectionStart:null;veBang();if(go){var o=el('bang').querySelector('tr[data-id="'+v.id+'"] [data-f="'+f+'"]');if(o){o.focus();try{o.setSelectionRange(vt,vt);}catch(x){}}}}
+  luu();
+}
+el('bang').addEventListener('change',sua);
+el('bang').addEventListener('input',function(e){if(e.target.type!=='checkbox'&&e.target.tagName!=='SELECT')sua(e);});
+el('them-viec').addEventListener('click',function(){dem++;st.viec.push({id:dem,k:'',ten:'',cc:'',phut:'',lan:'',dv:'ngay',minh:false,tien:false,ngoai:false,chon:true});veBang();luu();var o=el('bang').querySelectorAll('[data-f="ten"]');if(o.length)o[o.length-1].focus();});
+el('ngay').addEventListener('click',function(e){var n=Number(e.target.dataset.n);if(!n)return;st.ngay=n;veNgay();luu();});
+O_TIEN.forEach(function(id){el(id).addEventListener('input',luu);});
+
+var kq=null;
+function linkSp(p){return p.link?' <a href="'+p.link+'" target="_blank" rel="noopener">'+thoat(p.nut)+'</a>':'';}
+el('xem-kq').addEventListener('click',function(){
+  kq=tinh();
+  if(!kq.viec.length){el('bao-b2').textContent='Anh đánh dấu ít nhất 1 việc ở bước 1.';el('b1').scrollIntoView({behavior:'smooth'});return;}
+  el('bao-b2').textContent='';
+  var vs=kq.viec.slice().sort(function(a,b){return b.gioNam-a.gioNam;});
+  // Nỗi đau tổng
+  el('canh').innerHTML='Cứ làm tay thế này, mỗi năm anh mất <b>'+ds(kq.tongGio)+' giờ</b>. Bằng <b>'+ds(Math.round(kq.tongGio/8))+' ngày</b> làm không công.'+(kq.matNam?' Còn để mất <b>'+ds(kq.matNam)+' đ</b> tiền lãi vì trả lời chậm.':'');
+  var o=[['giờ làm tay mỗi năm',ds(kq.tongGio)+' giờ']];
+  if(kq.tienCong)o.push(['tiền công mỗi năm',ds(kq.tienCong)+' đ']);
+  if(kq.pmNam)o.push(['tiền phần mềm mỗi năm',ds(kq.pmNam)+' đ']);
+  if(kq.matNam)o.push(['tiền lãi mất mỗi năm',ds(kq.matNam)+' đ']);
+  el('so').innerHTML=o.map(function(x){return '<div><b>'+x[1]+'</b><span>'+x[0]+'</span></div>';}).join('');
+  // Việc tốn nhiều giờ nhất
+  var n=vs[0],mn=mau(n.k),pn=mn?SAN_PHAM[mn.sp[0]]:null;
+  el('nhat').innerHTML='<h3>Việc tốn giờ nhất: '+thoat(n.ten)+'</h3><div class="lon">'+ds(n.gioNam)+' giờ mỗi năm</div>'+
+    (mn?'<div class="dau-viec">'+thoat(mn.dau)+'</div><p style="margin:8px 0 0"><b>Phần mềm làm thay được: '+MUC_CHU[mucViec(n)]+'.</b> Dùng <b>'+thoat(pn.ten)+'</b>: '+thoat(pn.mo)+'</p>'
+       :'<p style="margin:8px 0 0">Việc này chưa có phần mềm làm sẵn. Nhắn Zalo '+ZALO+', em xem giúp anh.</p>');
+  // Bảng phân tích
+  el('pt').innerHTML=vs.map(function(v){
+    var m=mau(v.k),c=mucViec(v),p=m?SAN_PHAM[m.sp[0]]:null;
+    return '<tr><td><b>'+thoat(v.ten)+'</b>'+(m?'<div class="dau-viec">'+thoat(m.dau)+'</div>':'')+'</td><td>'+ds(v.gioNam)+'</td>'+
+      '<td><span class="muc '+c+'">'+MUC_CHU[c]+'</span>'+(p?'<div>'+thoat(p.ten)+linkSp(p)+'</div>':'')+'</td>'+
+      '<td>'+(m?thoat(m.loi):'Nhắn Zalo, em xem giúp.')+'</td></tr>';
+  }).join('');
+  // Kết quả phần mềm đem lại
+  var gioSan=0,gioSap=0,coDem=false,spDung=[];
+  vs.forEach(function(v){var c=mucViec(v);if(c==='san')gioSan+=v.gioNam;if(c==='noibo')gioSap+=v.gioNam;if(c==='san'&&v.ngoai)coDem=true;
+    var m=mau(v.k);if(m&&SAN_PHAM[m.sp[0]].muc==='san'&&spDung.indexOf(m.sp[0])<0)spDung.push(m.sp[0]);});
+  var giaGio=soTien(el('gia-gio').value),d=[];
+  if(gioSan)d.push('Lấy lại <b>'+ds(gioSan)+' giờ</b> mỗi năm, bằng <b>'+ds(Math.round(gioSan/8))+' ngày</b> làm việc.');
+  if(gioSan&&giaGio)d.push('Bớt <b>'+ds(gioSan*giaGio)+' đ</b> tiền công mỗi năm.');
+  if(coDem&&kq.matNam)d.push('Giữ lại <b>'+ds(kq.matNam)+' đ</b> tiền lãi vì không còn trả lời chậm.');
+  if(gioSap)d.push('Còn <b>'+ds(gioSap)+' giờ</b> nữa ở việc phần mềm đang hoàn thiện.');
+  if(!d.length)d.push('Những việc anh chọn chưa có phần mềm làm sẵn. Nhắn Zalo '+ZALO+', em xem giúp.');
+  el('ket').innerHTML='<h3>Phần mềm đem lại cho anh</h3><ul>'+d.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>'+
+    (spDung.length?'<p style="margin:8px 0 0">Phần mềm hợp với anh: <b>'+spDung.map(function(k){return thoat(SAN_PHAM[k].ten);}).join(', ')+'</b>.</p>':'');
+  // Nút cuối: phần mềm của việc tốn giờ nhất có sẵn
+  var dau=null;for(var i=0;i<vs.length&&!dau;i++){var m=mau(vs[i].k);if(m)m.sp.forEach(function(k){if(!dau&&SAN_PHAM[k].link)dau=SAN_PHAM[k].link;});}
+  var a=el('xem-pm');a.href=dau||('https://zalo.me/'+ZALO);a.target=dau&&dau.charAt(0)==='/'?'_self':'_blank';
+  el('b3').classList.remove('an');
+  el('b3').scrollIntoView({behavior:'smooth'});
+});
+el('xem-pm').addEventListener('click',function(){try{if(window.fbq)fbq('track','Lead');}catch(e){}});
+
+nap();
+if(!st.ngay)st.ngay=6;
+veBang();veNgay();
+})();
+</script>
+</body>
+</html>
